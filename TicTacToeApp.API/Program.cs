@@ -1,41 +1,50 @@
+using Newtonsoft.Json;
+using TicTacToeApp.API.Entity;
+using TicTacToeApp.API.Interfaces;
+using TicTacToeApp.API.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddSingleton<IGameRepository, GameRepository>();
 
 var app = builder.Build();
+app.MapOpenApi();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.MapGet("/api/games", (IGameRepository repo) =>
 {
-    app.MapOpenApi();
-}
+    return Results.Ok(repo.GetGames().Select(g => new{Id = g.Id}));
+});
 
-app.UseHttpsRedirection();
-
-var summaries = new[]
+app.MapGet("/api/games/{Id}", (IGameRepository repo, Guid Id) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    return Results.Ok(repo.FindGameByGuid(Id));
+});
 
-app.MapGet("/weatherforecast", () =>
+app.MapPost("api/game/new", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    var game = new Game();
+    return Results.Ok(game);
+});
+
+app.MapPost("api/game/{game_id:guid}/move", (IGameRepository repo, Guid game_id, Move move) =>
+{
+    var game = repo.FindGameByGuid(game_id);
+    game.Board[move.x][move.y] = (int)(move.p);
+    game.CurrentStep += 1;
+
+    var response = new
+    {
+        GameId = game_id,
+        Board = game.Board,
+        Status = game.Status,
+        Result = game.Result,
+        DateTime = DateTime.UtcNow,
+        CurrentStep = game.CurrentStep
+    };
+
+    return Results.Ok(response);
+});
+
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

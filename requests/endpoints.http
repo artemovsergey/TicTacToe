@@ -1,0 +1,27 @@
+@api = http://localhost:5055/api
+
+GET {{api}}/games
+Accept: application/json
+
+###
+
+@gameId =d26574b7-e77d-4c6f-8c38-91328756ce7d
+
+GET {{api}}/games/{{gameId}}
+Accept: application/json
+
+###
+
+POST {{api}}/game/new
+Accept: application/json
+
+###
+
+POST {{api}}/game/{{gameId}}/move
+Content-Type: application/json
+
+{
+  "x": 0,
+  "y": 2,
+  "p": 0
+}
