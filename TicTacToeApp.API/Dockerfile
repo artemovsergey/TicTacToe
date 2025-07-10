@@ -1,8 +1,7 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 USER $APP_UID
+
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
@@ -21,7 +20,7 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 
-COPY ./appsettings.Production.json /app/appsettings.Production.json
-COPY ./appsettings.json /app/appsettings.json
+COPY ./TicTacToeApp.API/appsettings.Production.json /app/appsettings.Production.json
+COPY ./TicTacToeApp.API/appsettings.json /app/appsettings.json
 
 ENTRYPOINT ["dotnet", "TicTacToeApp.API.dll"]

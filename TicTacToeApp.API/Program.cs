@@ -1,12 +1,7 @@
-using System.Security.Cryptography;
-using System.Text;
 using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TicTacToeApp.API.Data;
 using TicTacToeApp.API.Endpoints;
-using TicTacToeApp.API.Entity;
-using TicTacToeApp.API.Entity.Enums;
 using TicTacToeApp.API.Interfaces;
 using TicTacToeApp.API.Repositories;
 using JsonOptions = Microsoft.AspNetCore.Http.Json.JsonOptions;

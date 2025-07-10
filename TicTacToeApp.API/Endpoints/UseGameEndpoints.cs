@@ -8,18 +8,28 @@ namespace TicTacToeApp.API.Endpoints;
 
 public static class GameEndpoints
 {
-    const int TICTACTOE_BOARD_SIZE = 3;
-    const int TICTACTOE_LINE_TO_WIN = 3;
-    const int TICTACTOE_CHANCE = 50; // процент вероятности замены хода
-    const int TICTACTOE_NUMBER_STEP = 2; // на каком ходу
-
     public static WebApplication UseGameEndpoints(
         this WebApplication app,
         CancellationToken cancellationToken
     )
     {
-        app.MapGet("/api/games", (IGameRepository repo) => { return Results.Ok(repo.GetGames().Select(g => new { Id = g.Id })); });
-        app.MapGet("/api/games/{Id}", (IGameRepository repo, Guid Id) => { return Results.Ok(repo.FindGameByGuid(Id)); });
+        int TICTACTOE_BOARD_SIZE = app.Environment.IsProduction()
+            ? int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_BOARD_SIZE"))
+            : int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_BOARD_SIZE"));
+        int TICTACTOE_LINE_TO_WIN = app.Environment.IsProduction()
+            ? int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN"))
+            : int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN"));
+        int TICTACTOE_CHANCE = app.Environment.IsProduction()
+            ? int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN"))
+            : int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN")); // процент вероятности замены хода
+        int TICTACTOE_NUMBER_STEP = app.Environment.IsProduction()
+            ? int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN"))
+            : int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN")); // на каком ходу
+
+        app.MapGet("/api/games",
+            (IGameRepository repo) => { return Results.Ok(repo.GetGames().Select(g => new { Id = g.Id })); });
+        app.MapGet("/api/games/{Id}",
+            (IGameRepository repo, Guid Id) => { return Results.Ok(repo.FindGameByGuid(Id)); });
         app.MapPost("/api/games/new", (IGameRepository repo) =>
         {
             if (TICTACTOE_LINE_TO_WIN > TICTACTOE_BOARD_SIZE)
@@ -31,7 +41,7 @@ public static class GameEndpoints
         });
 
         app.MapPost("api/games/{game_id:guid}/move",
-            (   HttpResponse r,
+            (HttpResponse r,
                 [FromHeader(Name = "If-Match")] string? ifMatchHeader,
                 IGameRepository repo,
                 Guid game_id,
@@ -82,15 +92,20 @@ public static class GameEndpoints
 
 
                 // Наращиваем счетчик ходов в игре
+
                 game.CurrentStep += 1;
 
                 // Проверяем особое условие на каждый 2 ход с шансом 50% замены выбора
-
-                if (game.CurrentStep > 0 && game.CurrentStep % 2 == 0)
+                bool maybeReplace = false;
+                if (game.CurrentStep > 0 && game.CurrentStep % TICTACTOE_NUMBER_STEP == 0)
                 {
-                    var maybeReplace = new Random().NextInt64(1, 3); // [1,2]
-                    Console.WriteLine($"Рандомное число: {maybeReplace}");
-                    if (maybeReplace == 2)
+                    var random = new Random();
+                    double probability = TICTACTOE_CHANCE / 100; // 50%
+                    maybeReplace = random.NextDouble() < probability; // true с вероятностью 50%
+
+                    // var maybeReplace = new Random().NextInt64(1, 3); // [1,2]
+                    Console.WriteLine($"Замена хода: {maybeReplace}");
+                    if (maybeReplace)
                     {
                         Console.WriteLine(
                             $"Сработала вероятность 50%. Текущий ход: {game.CurrentStep}. Выбор игрока заменен на противоположный!");
@@ -124,7 +139,8 @@ public static class GameEndpoints
                     Result = game.Result,
                     DateTime = DateTime.UtcNow,
                     CurrentStep = game.CurrentStep,
-                    CurrentMove = game.CurrentMove
+                    CurrentMove = game.CurrentMove,
+                    ReplaceMove = maybeReplace
                 };
 
                 // Отправляем ответ c новым Еtag
@@ -134,9 +150,4 @@ public static class GameEndpoints
 
         return app;
     }
-    
-    
-
-    
-    
 }

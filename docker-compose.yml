@@ -4,62 +4,22 @@
     
 volumes:
   postgres_data:
-  sql_data:
 
 services:
-  
-#  nginx:
-#    container_name: SampleAppNginx
-#    build:
-#      context: .
-#      dockerfile: loadbalancer/Dockerfile
-#    restart: always
-#    ports:
-#      - "80:80"
-#      - "443:443"
-#    networks:
-#      - network
-#    depends_on:
-#      - api
-        
-#  angular:
-#    container_name: SampleAppAngular
-#    restart: always
-#    build:
-#      context: .
-#      dockerfile: SampleApp.Angular/Dockerfile
-      
-#    develop:
-#      watch:
-#        - action: sync
-#          path: .SampleApp.Angular/src
-#          target: /app/src
-#          ignore:
-#            - node_modules/
-#        - action: rebuild
-#          path: package.json
-          
-#    ports:
-#      - "4201:4200"
-#    depends_on:
-#      - api
-#    networks:
-#      - network
-  
+    
   api:
     container_name: TicTacToeAPI
     image: tictactoe.api
     environment:
       - ASPNETCORE_ENVIRONMENT = Production
-      - TICTACTOE_BOARD_SIZE = 3;
-      - TICTACTOE_LINE_TO_WIN = 3;
-      - TICTACTOE_CHANCE = 50;
-      - TICTACTOE_NUMBER_STEP = 2;
+      - ASPNETCORE_URLS=http://*:5000
+    env_file:
+      - game.env
     build:
       context: .
       dockerfile: TicTacToeApp.API/Dockerfile
     ports:
-      - "5015:5001"
+      - "8080:5000"
     networks:
       - network
     depends_on:
