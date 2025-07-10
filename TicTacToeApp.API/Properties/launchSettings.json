@@ -7,7 +7,11 @@
       "launchBrowser": false,
       "applicationUrl": "http://localhost:5055",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "TICTACTOE_BOARD_SIZE": "3",
+        "TICTACTOE_LINE_TO_WIN": "3",
+        "TICTACTOE_CHANCE": "50",
+        "TICTACTOE_NUMBER_STEP": "2"
       }
     },
     "https": {

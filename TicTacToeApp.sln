@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeApp.API", "TicTacToeApp.API\TicTacToeApp.API.csproj", "{53C0FBC4-074F-4EE2-803D-21FC83D8814C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeApp.Tests", "TicTacToeApp.Tests\TicTacToeApp.Tests.csproj", "{C020D18C-5EB3-4B2A-A338-231B98A76A09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{53C0FBC4-074F-4EE2-803D-21FC83D8814C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53C0FBC4-074F-4EE2-803D-21FC83D8814C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53C0FBC4-074F-4EE2-803D-21FC83D8814C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C020D18C-5EB3-4B2A-A338-231B98A76A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C020D18C-5EB3-4B2A-A338-231B98A76A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C020D18C-5EB3-4B2A-A338-231B98A76A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C020D18C-5EB3-4B2A-A338-231B98A76A09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

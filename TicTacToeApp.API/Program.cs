@@ -1,50 +1,42 @@
-using Newtonsoft.Json;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using TicTacToeApp.API.Data;
+using TicTacToeApp.API.Endpoints;
 using TicTacToeApp.API.Entity;
+using TicTacToeApp.API.Entity.Enums;
 using TicTacToeApp.API.Interfaces;
 using TicTacToeApp.API.Repositories;
+using JsonOptions = Microsoft.AspNetCore.Http.Json.JsonOptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.Configure<JsonOptions>(options =>
+{
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
+
 builder.Services.AddOpenApi();
-builder.Services.AddSingleton<IGameRepository, GameRepository>();
+builder.Services.AddScoped<IGameRepository, GameRepository>();
+builder.Services.AddDbContext<TicTacToeContext>(o =>
+    o.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
+
 
 var app = builder.Build();
 app.MapOpenApi();
-
-app.MapGet("/api/games", (IGameRepository repo) =>
-{
-    return Results.Ok(repo.GetGames().Select(g => new{Id = g.Id}));
-});
-
-app.MapGet("/api/games/{Id}", (IGameRepository repo, Guid Id) =>
-{
-    return Results.Ok(repo.FindGameByGuid(Id));
-});
-
-app.MapPost("api/game/new", () =>
-{
-    var game = new Game();
-    return Results.Ok(game);
-});
-
-app.MapPost("api/game/{game_id:guid}/move", (IGameRepository repo, Guid game_id, Move move) =>
-{
-    var game = repo.FindGameByGuid(game_id);
-    game.Board[move.x][move.y] = (int)(move.p);
-    game.CurrentStep += 1;
-
-    var response = new
-    {
-        GameId = game_id,
-        Board = game.Board,
-        Status = game.Status,
-        Result = game.Result,
-        DateTime = DateTime.UtcNow,
-        CurrentStep = game.CurrentStep
-    };
-
-    return Results.Ok(response);
-});
-
-
+app.MapGet("/health", () => Results.Ok("Проверка работы"));
+app.UseGameEndpoints(cancellationToken: default!);
 app.Run();
+
+
+
+
+
+
+
+
+
+
+

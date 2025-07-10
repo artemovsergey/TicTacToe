@@ -1,27 +1,29 @@
 @api = http://localhost:5055/api
 
+### Показать все игры 
+
 GET {{api}}/games
 Accept: application/json
 
-###
+### Получить отдельную игру
 
-@gameId =d26574b7-e77d-4c6f-8c38-91328756ce7d
+@gameId = 15c63203-c5c3-42be-b9b1-c7523d53a37c
 
 GET {{api}}/games/{{gameId}}
 Accept: application/json
 
-###
+### Создать игру
 
 POST {{api}}/game/new
 Accept: application/json
 
-###
+### Сделать ход X или O
 
 POST {{api}}/game/{{gameId}}/move
 Content-Type: application/json
 
 {
-  "x": 0,
+  "x": 1,
   "y": 2,
-  "p": 0
+  "p": "X"
 }
