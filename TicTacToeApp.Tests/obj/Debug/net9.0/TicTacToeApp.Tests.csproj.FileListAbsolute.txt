@@ -121,3 +121,4 @@ C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Microsoft.
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\obj\Debug\net9.0\TicTacToeApp.Tests.sourcelink.json
