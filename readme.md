@@ -1,5 +1,7 @@
 # Приложение "Крестики-нолики"
 
+[![.NET Tests](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml/badge.svg?branch=master&event=push)](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml)
+
  - сделать юнит и интеграционные тесты
  - настроить ci/cd
  - добавить общую обработку ошибок +
