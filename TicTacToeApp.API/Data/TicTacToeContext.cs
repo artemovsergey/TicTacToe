@@ -5,7 +5,7 @@ namespace TicTacToeApp.API.Data;
 
 using Microsoft.EntityFrameworkCore;
 
-public class TicTacToeContext : DbContext
+public sealed class TicTacToeContext : DbContext
 {
     public TicTacToeContext(DbContextOptions<TicTacToeContext> opt) : base(opt)
     {
@@ -34,7 +34,7 @@ public class TicTacToeContext : DbContext
             entity.Property(g => g.Board)
                 .HasConversion(
                     v => JsonSerializer.Serialize(v, (JsonSerializerOptions?)null),
-                    v => JsonSerializer.Deserialize<string?[][]>(v, (JsonSerializerOptions?)null));
+                    v => JsonSerializer.Deserialize<string?[][]>(v, (JsonSerializerOptions?)null)!);
         });
 
         modelBuilder.Entity<Move>(entity =>

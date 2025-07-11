@@ -5,20 +5,20 @@ using TicTacToeApp.API.Interfaces;
 
 namespace TicTacToeApp.API.Repositories;
 
-public sealed class GameRepository(TicTacToeContext db, ILogger<GameRepository> log) : IGameRepository
+public sealed class GameAsyncRepository(TicTacToeContext db, ILogger<GameAsyncRepository> log) : IGameAsyncRepository
 {
-    public Game FindGameByGuid(Guid id)
+    public async Task<Game> FindGameByGuidAsync(Guid id, CancellationToken ct)
     {
-        var game = db.Games.FirstOrDefault(g => g.Id == id);
+        var game = await db.Games.FirstOrDefaultAsync(g => g.Id == id);
         return game ?? throw new Exception("Нет такой игры!");
     }
 
-    public List<Game> GetGames()
+    public async Task<IEnumerable<Game>> GetGamesAsync(CancellationToken ct)
     {
-        return db.Games.AsNoTracking().ToList();
+        return await db.Games.AsNoTracking().ToListAsync();
     }
 
-    public Game CreateGame(int size)
+    public async Task<Game> CreateGameAsync(int size, CancellationToken ct)
     {
         if (size < 3) throw new ArgumentException("Поле для игры должно быть минимум 3 на 3");
 
@@ -27,18 +27,18 @@ public sealed class GameRepository(TicTacToeContext db, ILogger<GameRepository> 
             Board = CreateEmptyBoard(size)
         };
         db.Games.Add(game);
-        db.SaveChanges();
+        await db.SaveChangesAsync();
         log.LogInformation($"Создана игра {game.Id}");
         return game;
     }
 
-    public bool UpdateGame(Game game)
+    public async Task<bool> UpdateGameAsync(Game game, CancellationToken ct)
     {
         db.Games.Update(game);
-        return db.SaveChanges() > 0;
+        return await db.SaveChangesAsync() > 0;
     }
 
-    private string?[][] CreateEmptyBoard(int size)
+    public string?[][] CreateEmptyBoard(int size)
     {
         var board = new string?[size][];
         for (int i = 0; i < size; i++)

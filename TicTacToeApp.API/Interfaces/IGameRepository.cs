@@ -2,10 +2,10 @@ using TicTacToeApp.API.Entity;
 
 namespace TicTacToeApp.API.Interfaces;
 
-public interface IGameRepository
+public interface IGameAsyncRepository
 {
-    Game FindGameByGuid(Guid id);
-    List<Game> GetGames();
-    Game CreateGame(int size);
-    bool UpdateGame(Game game);
+    Task<Game> FindGameByGuidAsync(Guid id, CancellationToken ct);
+    Task<IEnumerable<Game>> GetGamesAsync(CancellationToken ct);
+    Task<Game> CreateGameAsync(int size, CancellationToken ct);
+    Task<bool> UpdateGameAsync(Game game, CancellationToken ct);
 }

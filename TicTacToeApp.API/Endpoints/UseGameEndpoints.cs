@@ -13,46 +13,44 @@ public static class GameEndpoints
         CancellationToken cancellationToken
     )
     {
-        int TICTACTOE_BOARD_SIZE = app.Environment.IsProduction()
-            ? int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_BOARD_SIZE"))
-            : int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_BOARD_SIZE"));
-        int TICTACTOE_LINE_TO_WIN = app.Environment.IsProduction()
-            ? int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN"))
-            : int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN"));
-        int TICTACTOE_CHANCE = app.Environment.IsProduction()
-            ? int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN"))
-            : int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN")); // процент вероятности замены хода
-        int TICTACTOE_NUMBER_STEP = app.Environment.IsProduction()
-            ? int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN"))
-            : int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN")); // на каком ходу
+        int TICTACTOE_BOARD_SIZE = int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_BOARD_SIZE")!);
+
+        int TICTACTOE_LINE_TO_WIN = int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN")!);
+
+        int TICTACTOE_CHANCE =
+            int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN")!); // процент вероятности замены хода
+        int TICTACTOE_NUMBER_STEP =
+            int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN")!); // на каком ходу
 
         app.MapGet("/api/games",
-            (IGameRepository repo) => { return Results.Ok(repo.GetGames().Select(g => new { Id = g.Id })); });
+            async (IGameAsyncRepository repo, CancellationToken ct) =>
+            {
+                return Results.Ok((await repo.GetGamesAsync(ct)).Select(g => new { Id = g.Id }));
+            });
         app.MapGet("/api/games/{Id}",
-            (IGameRepository repo, Guid Id) => { return Results.Ok(repo.FindGameByGuid(Id)); });
-        app.MapPost("/api/games/new", (IGameRepository repo) =>
+            (IGameAsyncRepository repo, Guid Id, CancellationToken ct) =>
+            {
+                return Results.Ok(repo.FindGameByGuidAsync(Id, ct));
+            });
+        app.MapPost("/api/games/new", async (IGameAsyncRepository repo, CancellationToken ct) =>
         {
             if (TICTACTOE_LINE_TO_WIN > TICTACTOE_BOARD_SIZE)
                 return Results.BadRequest(
                     "Количество одинаковых элементов должно быть меньше или равно размерности доски!");
 
-            var game = repo.CreateGame(TICTACTOE_BOARD_SIZE);
+            var game = await repo.CreateGameAsync(TICTACTOE_BOARD_SIZE, ct);
             return Results.Ok(game);
         });
 
         app.MapPost("api/games/{game_id:guid}/move",
-            (HttpResponse r,
+            async (HttpResponse r,
                 [FromHeader(Name = "If-Match")] string? ifMatchHeader,
-                IGameRepository repo,
+                IGameAsyncRepository repo,
                 Guid game_id,
-                Move move) =>
+                Move move,
+                CancellationToken ct) =>
             {
-                // Находим нужную игру
-                var game = repo.FindGameByGuid(game_id);
-
-                // var etag = EtagService.GenerateETag(game);
-
-                // Проверка ETag
+                var game = await repo.FindGameByGuidAsync(game_id, ct);
                 var currentETag = EtagService.GenerateETag(game);
                 if (ifMatchHeader != null && ifMatchHeader != currentETag)
                 {
@@ -127,7 +125,7 @@ public static class GameEndpoints
                     game.Status = StatusGame.Complete;
                 }
 
-                repo.UpdateGame(game);
+                await repo.UpdateGameAsync(game, ct);
 
                 // Формируем ответ 
 

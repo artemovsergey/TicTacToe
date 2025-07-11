@@ -30,7 +30,6 @@ internal sealed class GameService
 
         return ResultGame.Draw;
     }
-
     internal static ResultGame CheckBoardN(string?[][] board, string player, int lineToWin)
     {
         int size = board.Length;

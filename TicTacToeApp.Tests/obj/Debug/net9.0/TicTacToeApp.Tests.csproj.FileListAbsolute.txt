@@ -122,3 +122,15 @@ C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\obj\Debug\net9.0\refint\Tic
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\obj\Debug\net9.0\TicTacToeApp.Tests.pdb
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\obj\Debug\net9.0\TicTacToeApp.Tests.genruntimeconfig.cache
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\obj\Debug\net9.0\ref\TicTacToeApp.Tests.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Castle.Core.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Moq.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Scrutor.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
