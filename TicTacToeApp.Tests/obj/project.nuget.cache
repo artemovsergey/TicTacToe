@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5Dw+jIK6Piw=",
+  "dgSpecHash": "KELFKY3nyDo=",
   "success": true,
   "projectFilePath": "C:\\Users\\asv\\Desktop\\TicTacToeApp\\TicTacToeApp.Tests\\TicTacToeApp.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asv\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
     "C:\\Users\\asv\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\asv\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
+    "C:\\Users\\asv\\.nuget\\packages\\coverlet.msbuild\\6.0.4\\coverlet.msbuild.6.0.4.nupkg.sha512",
     "C:\\Users\\asv\\.nuget\\packages\\docker.dotnet.enhanced\\3.128.3\\docker.dotnet.enhanced.3.128.3.nupkg.sha512",
     "C:\\Users\\asv\\.nuget\\packages\\docker.dotnet.enhanced.x509\\3.128.3\\docker.dotnet.enhanced.x509.3.128.3.nupkg.sha512",
     "C:\\Users\\asv\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.1\\microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
