@@ -134,3 +134,10 @@ C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Swashbuckl
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Docker.DotNet.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Docker.DotNet.X509.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\ICSharpCode.SharpZipLib.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Renci.SshNet.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Testcontainers.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Testcontainers.PostgreSql.dll
