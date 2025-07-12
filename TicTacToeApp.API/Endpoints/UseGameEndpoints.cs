@@ -28,9 +28,9 @@ public static class GameEndpoints
                 return Results.Ok((await repo.GetGamesAsync(ct)).Select(g => new { Id = g.Id }));
             });
         app.MapGet("/api/games/{Id}",
-            (IGameAsyncRepository repo, Guid Id, CancellationToken ct) =>
+            async (IGameAsyncRepository repo, Guid Id, CancellationToken ct) =>
             {
-                return Results.Ok(repo.FindGameByGuidAsync(Id, ct));
+                return Results.Ok(await repo.FindGameByGuidAsync(Id, ct));
             });
         app.MapPost("/api/games/new", async (IGameAsyncRepository repo, CancellationToken ct) =>
         {
@@ -101,7 +101,6 @@ public static class GameEndpoints
                     double probability = TICTACTOE_CHANCE / 100; // 50%
                     maybeReplace = random.NextDouble() < probability; // true с вероятностью 50%
 
-                    // var maybeReplace = new Random().NextInt64(1, 3); // [1,2]
                     Console.WriteLine($"Замена хода: {maybeReplace}");
                     if (maybeReplace)
                     {
