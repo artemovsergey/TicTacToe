@@ -39,61 +39,11 @@ app.UseSwaggerUI(c =>
 
 app.MapOpenApi();
 
-app.MapGet("/health", () => Results.Ok("Проверка работы")).WithName("GetProductById")
-    .WithOpenApi(operation =>
-    {
-        operation.Responses.Add("400", new OpenApiResponse
-        {
-            Description = "Bad Request",
-            Content = new Dictionary<string, OpenApiMediaType>
-            {
-                ["application/json"] = new OpenApiMediaType
-                {
-                    Schema = new OpenApiSchema
-                    {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.Schema,
-                            Id = "ErrorResponse"
-                        }
-                    }
-                }
-            }
-        });
-    
-        operation.Responses.Add("404", new OpenApiResponse
-        {
-            Description = "Not Found",
-            Content = new Dictionary<string, OpenApiMediaType>
-            {
-                ["application/json"] = new OpenApiMediaType
-                {
-                    Schema = new OpenApiSchema
-                    {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.Schema,
-                            Id = "ProblemDetails"
-                        }
-                    }
-                }
-            }
-        });
-    
-        return operation;
-    });
+app.MapGet("/health", () => Results.Ok("Проверка работы"))
+    .WithTags("HealthCheck")
+    .WithName("CheckHealth")
+    .WithSummary("Проверка здоровья сервиса");
 
 
 app.UseGameEndpoints(cancellationToken: default!);
 app.Run();
-
-
-
-
-
-
-
-
-
-
-

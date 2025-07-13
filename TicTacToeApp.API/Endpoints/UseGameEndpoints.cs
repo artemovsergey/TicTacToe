@@ -1,5 +1,6 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Models;
 using TicTacToeApp.API.Entity;
 using TicTacToeApp.API.Entity.Enums;
 using TicTacToeApp.API.Interfaces;
@@ -29,12 +30,11 @@ public static class GameEndpoints
             async (IGameAsyncRepository repo, CancellationToken ct) =>
             {
                 return Results.Ok((await repo.GetGamesAsync(ct)).Select(g => new { Id = g.Id }));
-            }).WithOpenApi(operation => 
-            {
-                operation.Summary = "Список доступных игр";
-                operation.Description = "Возвращает список объектов GameDto";
-                return operation;
-            }).Produces<Game>(StatusCodes.Status200OK)
+            }).WithTags("Games")
+            .WithName("GetAllGames")
+            .WithSummary("Список доступных игр")
+            .WithDescription("Возвращает список объектов GameDto")
+            .Produces<List<Game>>(StatusCodes.Status200OK)
             .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 
         app.MapGet("/api/games/{Id}",
@@ -48,7 +48,7 @@ public static class GameEndpoints
                 operation.Description = "Возвращает объект Game";
                 return operation;
             }).Produces<Game>(StatusCodes.Status200OK)
-            .Produces<ProblemDetails>(StatusCodes.Status404NotFound);
+            .Produces<ErrorResponse>(StatusCodes.Status404NotFound);
         ;
 
         app.MapPost("/api/games/new", async (IGameAsyncRepository repo, CancellationToken ct) =>

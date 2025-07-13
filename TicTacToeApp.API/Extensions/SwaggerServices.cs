@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using TicTacToeApp.API.Filters;
 
 namespace TicTacToeApp.API.Extensions;
 
@@ -26,6 +27,7 @@ public static class SwaggerServices
             );
 
             c.EnableAnnotations();
+            c.SchemaFilter<ErrorResponseSchemaFilter>();
         });
 
         return services;
