@@ -29,7 +29,7 @@ public static class GameEndpoints
         app.MapGet("/api/games",
                 async (IGameAsyncRepository repo, CancellationToken ct) =>
                 {
-                    return Results.Ok(await repo.GetGamesAsync(ct)); //.Select(g => new { Id = g.Id }));
+                    return Results.Ok(await repo.GetGamesAsync(ct));
                 })
             .WithTags("TicTacToeApp.API")
             .WithName("GetAllGames")
@@ -38,7 +38,7 @@ public static class GameEndpoints
             .Produces<List<Game>>(StatusCodes.Status200OK)
             .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 
-        app.MapGet("/api/games/{Id}",
+        app.MapGet("/api/games/{Id:guid}",
                 async (IGameAsyncRepository repo, Guid Id, CancellationToken ct) =>
                 {
                     return Results.Ok(await repo.FindGameByGuidAsync(Id, ct));
@@ -49,111 +49,138 @@ public static class GameEndpoints
                 operation.Summary = "Получение игры по Id";
                 operation.Description = "Возвращает объект Game";
                 return operation;
-            }).Produces<Game>(StatusCodes.Status200OK)
+            })
+            .Produces<Game>(StatusCodes.Status200OK)
             .Produces<ErrorResponse>(StatusCodes.Status404NotFound);
-        ;
 
         app.MapPost("/api/games/new", async (IGameAsyncRepository repo, GameOption? gameOption, CancellationToken ct) =>
             {
+                
+                if (gameOption.size < 3 || gameOption.line_to_win < 1 || gameOption.chance < 1 || gameOption.step < 1 )
+                    return Results.Json<ErrorResponse>(new ErrorResponse(
+                            statusCode: "400",
+                            message: "Размерность должна быть больше от 3, условие победы, вероятность замены и шаг вероятности положительны"
+                        ),
+                        statusCode: StatusCodes.Status400BadRequest,
+                        contentType: "application/json"
+                    );
+
+                if (gameOption.line_to_win > gameOption.size)
+                    return Results.Json<ErrorResponse>(new ErrorResponse(
+                            statusCode: "400",
+                            message: "Количество одинаковых элементов должно быть меньше или равно размерности доски!"
+                        ),
+                        statusCode: StatusCodes.Status400BadRequest,
+                        contentType: "application/json"
+                    );
+                
+                
                 TICTACTOE_BOARD_SIZE = gameOption!.size;
                 TICTACTOE_LINE_TO_WIN = gameOption.line_to_win;
                 TICTACTOE_CHANCE = gameOption.chance;
                 TICTACTOE_NUMBER_STEP = gameOption.step;
-                
-                if (gameOption.line_to_win > gameOption.size)
-                    return Results.BadRequest(
-                        "Количество одинаковых элементов должно быть меньше или равно размерности доски!");
 
                 var game = await repo.CreateGameAsync(TICTACTOE_BOARD_SIZE, ct);
+
                 return Results.CreatedAtRoute("GetGameById", game, value: game);
-            }).WithTags("TicTacToeApp.API")
+            })
+            .WithTags("TicTacToeApp.API")
             .WithName("CreateGame")
             .WithSummary("Создание новой игры")
             .WithDescription("Возвращает объект игры Game")
             .Produces<Game>(StatusCodes.Status201Created)
             .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 
-        app.MapPost("api/games/{game_id:guid}/move",
+        app.MapPost("api/games/{gameId:guid}/move",
                 async (HttpResponse r,
                     [FromHeader(Name = "If-Match")] string? ifMatchHeader,
                     IGameAsyncRepository repo,
-                    MoveValidator moveValidator,
-                    GameValidator gameValidator,
-                    Guid game_id,
+                    Guid gameId,
                     Move move,
+                    ILogger<Program> log,
                     CancellationToken ct) =>
                 {
-                    var game = await repo.FindGameByGuidAsync(game_id, ct);
+                    var game = await repo.FindGameByGuidAsync(gameId, ct);
 
                     var currentETag = EtagService.GenerateETag(game);
+
                     if (ifMatchHeader != null && ifMatchHeader != currentETag)
                     {
-                        return Results.StatusCode(StatusCodes.Status412PreconditionFailed);
+                        log.LogError("Etag не совпадает");
+                        return Results.Json(
+                            new ErrorResponse(
+                                statusCode: "412",
+                                message: "Обновите состояние игры"
+                            ),
+                            statusCode: StatusCodes.Status412PreconditionFailed
+                        );
                     }
-
-
-                    // Проверяем статус игры - активная она или завершена
 
                     if (game.Status != StatusGame.Active)
                     {
-                        return Results.BadRequest($"Данная игра уже завершена! Итог: {game.Result}");
+                        log.LogError("Игра завершена");
+                        return Results.BadRequest(new ErrorResponse(
+                                statusCode: "400",
+                                message: $"Данная игра уже завершена! Итог: {game.Result}"
+                            )
+                        );
                     }
 
-                    // Проверяем верные ли координаты
-
-                    if (move.x < 0 || move.x > 2 || move.y < 0 || move.y > 2)
+                    if (move.x < 0 || move.x > TICTACTOE_BOARD_SIZE - 1 || move.y < 0 ||
+                        move.y > TICTACTOE_BOARD_SIZE - 1)
                     {
-                        return Results.BadRequest("Неверные координаты доски. Разрешено: 0-2");
+                        log.LogError("Координаты выходят за пределы поля");
+                        return Results.BadRequest(new ErrorResponse(
+                                statusCode: "400",
+                                message: $"Неверные координаты доски. Разрешено: 0-{TICTACTOE_BOARD_SIZE - 1}"
+                            )
+                        );
                     }
-
-                    // Проверка очередности хода 
 
                     if (game.CurrentMove != move.p)
                     {
-                        return Results.BadRequest($"Не ваш ход! Сейчас ход: {game.CurrentMove}");
+                        log.LogError("Ход вне очереди");
+                        return Results.BadRequest(new ErrorResponse(
+                                statusCode: "400",
+                                message: $"Не ваш ход! Сейчас ход: {game.CurrentMove}"
+                            )
+                        );
                     }
-
-                    // Проверяем ход игрока
 
                     if (game.Board[move.x][move.y] != null)
                     {
-                        return Results.Conflict($"Нельзя осуществить данный ход! Ячейка занята!");
+                        log.LogError($"Ячейка ({move.x},{move.y}) занята");
+                        return Results.Conflict(new ErrorResponse(
+                                statusCode: "409",
+                                message: $"Нельзя осуществить данный ход! Ячейка занята!"
+                            )
+                        );
                     }
 
-                    // Записываем ход игрока
                     game.Board[move.x][move.y] = (move.p.ToString());
-
-
-                    // Наращиваем счетчик ходов в игре
-
                     game.CurrentStep += 1;
 
-                    // Проверяем особое условие на каждый n ход с шансом m % замены выбора
+                    // Проверяем особое условие на каждый n ход с шансом m % замена выбора
+
                     bool maybeReplace = false;
                     if (game.CurrentStep > 0 && game.CurrentStep % TICTACTOE_NUMBER_STEP == 0)
                     {
                         var random = new Random();
-                        double probability = TICTACTOE_CHANCE / 100; // 50%
-                        maybeReplace = random.NextDouble() < probability; // true с вероятностью 50%
+                        double probability = TICTACTOE_CHANCE / 100.0; // %
+                        maybeReplace = random.NextDouble() < probability; // true с вероятностью %
 
-                        Console.WriteLine($"Замена хода: {maybeReplace}");
                         if (maybeReplace)
                         {
-                            Console.WriteLine(
-                                $"Сработала вероятность 50%. Текущий ход: {game.CurrentStep}. Выбор игрока заменен на противоположный!");
+                            log.LogWarning(
+                                $"Сработала вероятность {TICTACTOE_CHANCE}%. Текущий ход: {game.CurrentStep}. Выбор игрока заменен на противоположный!");
                             game.Board[move.x][move.y] = move.p == Player.X ? Player.O.ToString() : Player.X.ToString();
                         }
                     }
 
-
-                    // Обновление ожидаемого игрока 
-
                     game.CurrentMove = move.p == Player.X ? Player.O : Player.X;
 
-
-                    // Проверяем состояние доски
-
                     game.Result = GameService.CheckBoardN(game.Board, (move.p).ToString(), TICTACTOE_LINE_TO_WIN);
+
                     if (game.Result != ResultGame.None)
                     {
                         game.Status = StatusGame.Complete;
@@ -161,11 +188,9 @@ public static class GameEndpoints
 
                     await repo.UpdateGameAsync(game, ct);
 
-                    // Формируем ответ 
-
                     var response = new
                     {
-                        GameId = game_id,
+                        GameId = gameId,
                         Board = game.Board,
                         Status = game.Status,
                         Result = game.Result,
@@ -175,19 +200,20 @@ public static class GameEndpoints
                         ReplaceMove = maybeReplace
                     };
 
-                    // Отправляем ответ c новым Еtag
                     r.Headers.ETag = EtagService.GenerateETag(game);
                     return Results.Ok(response);
-                }).WithOpenApi(operation =>
+                })
+            .WithOpenApi(operation =>
             {
                 operation.Summary = "Ход игрока X или O";
-                operation.Description = "Возвращает состояние игры в виде объекта game";
+                operation.Description = "Возвращает состояние игры в виде объекта Game";
                 return operation;
-            }).Produces<Game>(StatusCodes.Status200OK)
+            })
+            .Produces<Game>(StatusCodes.Status200OK)
             .Produces<ErrorResponse>(StatusCodes.Status400BadRequest)
-            .Produces<ErrorResponse>(StatusCodes.Status404NotFound);
-
-
+            .Produces<ErrorResponse>(StatusCodes.Status409Conflict)
+            .Produces<ErrorResponse>(StatusCodes.Status412PreconditionFailed);
+        
         return app;
     }
 }

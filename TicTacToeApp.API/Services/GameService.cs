@@ -2,8 +2,9 @@ using TicTacToeApp.API.Entity.Enums;
 
 namespace TicTacToeApp.API.Services;
 
-internal sealed class GameService
+public sealed class GameService
 {
+
     internal static ResultGame CheckBoard(string?[][] arr, string p)
     {
         if ((arr[0][0] == p && arr[0][0] == arr[0][1] && arr[0][1] == arr[0][2]) ||
@@ -95,4 +96,20 @@ internal sealed class GameService
     {
         return player == "X" ? ResultGame.WinX : ResultGame.WinO;
     }
+    
+    public static string?[][] CreateEmptyBoard(int size)
+    {
+        var board = new string?[size][];
+        for (int i = 0; i < size; i++)
+        {
+            board[i] = new string?[size];
+            for (int j = 0; j < size; j++)
+            {
+                board[i][j] = null;
+            }
+        }
+
+        return board;
+    }
+    
 }

@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using TicTacToeApp.API.Data;
 using TicTacToeApp.API.Entity;
+using TicTacToeApp.API.Exceptions;
 using TicTacToeApp.API.Interfaces;
+using TicTacToeApp.API.Services;
 
 namespace TicTacToeApp.API.Repositories;
 
@@ -9,13 +11,16 @@ public sealed class GameAsyncRepository(TicTacToeContext db, ILogger<GameAsyncRe
 {
     public async Task<Game> FindGameByGuidAsync(Guid id, CancellationToken ct)
     {
-        var game = await db.Games.FirstOrDefaultAsync(g => g.Id == id);
-        return game ?? throw new Exception("Нет такой игры!");
+        const string errorMessage = "Нет такой игры";
+        var game = await db.Games.FirstOrDefaultAsync(g => g.Id == id, ct);
+        log.LogError(errorMessage);
+        return game ?? throw new NotFoundException(errorMessage);
     }
 
     public async Task<IEnumerable<Game>> GetGamesAsync(CancellationToken ct)
     {
-        return await db.Games.AsNoTracking().ToListAsync();
+        log.LogInformation("Все игры получены!");
+        return await db.Games.AsNoTracking().ToListAsync(ct);
     }
 
     public async Task<Game> CreateGameAsync(int size, CancellationToken ct)
@@ -24,10 +29,10 @@ public sealed class GameAsyncRepository(TicTacToeContext db, ILogger<GameAsyncRe
 
         var game = new Game()
         {
-            Board = CreateEmptyBoard(size)
+            Board = GameService.CreateEmptyBoard(size)
         };
-        db.Games.Add(game);
-        await db.SaveChangesAsync();
+        await db.Games.AddAsync(game, ct);
+        await db.SaveChangesAsync(ct);
         log.LogInformation($"Создана игра {game.Id}");
         return game;
     }
@@ -35,21 +40,8 @@ public sealed class GameAsyncRepository(TicTacToeContext db, ILogger<GameAsyncRe
     public async Task<bool> UpdateGameAsync(Game game, CancellationToken ct)
     {
         db.Games.Update(game);
-        return await db.SaveChangesAsync() > 0;
+        log.LogInformation($"Создана игра {game.Id}");
+        return await db.SaveChangesAsync(ct) > 0;
     }
-
-    public string?[][] CreateEmptyBoard(int size)
-    {
-        var board = new string?[size][];
-        for (int i = 0; i < size; i++)
-        {
-            board[i] = new string?[size];
-            for (int j = 0; j < size; j++)
-            {
-                board[i][j] = null;
-            }
-        }
-
-        return board;
-    }
+    
 }

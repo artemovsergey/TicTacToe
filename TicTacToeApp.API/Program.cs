@@ -21,8 +21,6 @@ builder.Services.Configure<JsonOptions>(options =>
 
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerServices();
-builder.Services.AddScoped<MoveValidator>();
-builder.Services.AddScoped<GameValidator>();
 builder.Services.AddScoped<IGameAsyncRepository, GameAsyncRepository>();
 builder.Services.AddDbContext<TicTacToeContext>(o =>
     o.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));

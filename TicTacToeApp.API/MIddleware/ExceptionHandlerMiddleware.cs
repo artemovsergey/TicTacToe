@@ -6,7 +6,7 @@ using TicTacToeApp.API.Response;
 
 namespace TicTacToeApp.API.Middleware;
 
-public class ExceptionHandlerMiddleware
+public sealed class ExceptionHandlerMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<ExceptionHandlerMiddleware> _logger;
@@ -58,16 +58,25 @@ public class ExceptionHandlerMiddleware
                 message = badRequestException.Message;
                 messagedetail = badRequestException.StackTrace?.ToString();
                 break;
+            
             case NotFoundException ex:
                 httpStatusCode = HttpStatusCode.NotFound;
                 message = ex.Message;
                 messagedetail = ex.StackTrace?.ToString();
                 break;
+            
+            case ArgumentException ex:
+                httpStatusCode = HttpStatusCode.BadRequest;
+                message = ex.Message;
+                messagedetail = ex.StackTrace?.ToString();
+                break;
+            
             case SqlTypeException sqlEx:
                 httpStatusCode = HttpStatusCode.BadRequest;
                 message = sqlEx.Message;
                 messagedetail = sqlEx.StackTrace?.ToString();
                 break;
+            
             case Exception ex:
                 httpStatusCode = HttpStatusCode.InternalServerError;
                 message = ex.Message;

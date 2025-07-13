@@ -1,4 +1,5 @@
 using TicTacToeApp.API.Repositories;
+using TicTacToeApp.API.Services;
 
 namespace TicTacToeApp.Tests;
 
@@ -12,11 +13,8 @@ public class GameAsyncRepositoryTests
     [InlineData(10)]
     public void CreateEmptyBoard_ShouldReturnCorrectlyInitializedBoard(int size)
     {
-        // Arrange
-        var repository = new GameAsyncRepository(null!, null!); // Заглушки для зависимостей
-        
         // Act
-        var board = repository.CreateEmptyBoard(size);
+        var board = GameService.CreateEmptyBoard(size);
         
         // Assert
         Assert.NotNull(board);
@@ -37,7 +35,7 @@ public class GameAsyncRepositoryTests
         var repository = new GameAsyncRepository(null!, null!);
         
         // Act
-        var board = repository.CreateEmptyBoard(0);
+        var board = GameService.CreateEmptyBoard(0);
         
         // Assert
         Assert.NotNull(board);

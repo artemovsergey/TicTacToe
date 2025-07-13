@@ -54,21 +54,6 @@ namespace TicTacToeApp.API.Migrations
 
                     b.ToTable("Games");
                 });
-
-            modelBuilder.Entity("TicTacToeApp.API.Entity.Move", b =>
-                {
-                    b.Property<string>("p")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("x")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("y")
-                        .HasColumnType("integer");
-
-                    b.ToTable("Moves");
-                });
 #pragma warning restore 612, 618
         }
     }

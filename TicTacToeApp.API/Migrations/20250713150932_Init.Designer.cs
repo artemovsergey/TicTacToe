@@ -12,7 +12,7 @@ using TicTacToeApp.API.Data;
 namespace TicTacToeApp.API.Migrations
 {
     [DbContext(typeof(TicTacToeContext))]
-    [Migration("20250709212659_Init")]
+    [Migration("20250713150932_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -56,21 +56,6 @@ namespace TicTacToeApp.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Games");
-                });
-
-            modelBuilder.Entity("TicTacToeApp.API.Entity.Move", b =>
-                {
-                    b.Property<string>("p")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("x")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("y")
-                        .HasColumnType("integer");
-
-                    b.ToTable("Moves");
                 });
 #pragma warning restore 612, 618
         }

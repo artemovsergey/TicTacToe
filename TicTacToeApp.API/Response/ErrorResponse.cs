@@ -1,6 +1,8 @@
+using System.Text.Json.Serialization;
+
 namespace TicTacToeApp.API.Response;
 
-public class ErrorResponse
+public sealed class ErrorResponse
 {
     public ErrorResponse(string statusCode, string? message = "", string? detail = "")
     {
@@ -9,7 +11,10 @@ public class ErrorResponse
         Detail = detail;
     }
 
-    public string StatusCode { get; set; } = string.Empty;
-    public string? Message { get; set; } = string.Empty;
-    public string? Detail { get; set; } = string.Empty;
+    [JsonInclude]
+    internal string StatusCode { get; set; } = string.Empty;
+    [JsonInclude]
+    internal string? Message { get; set; } = string.Empty;
+    [JsonInclude]
+    internal string? Detail { get; set; } = string.Empty;
 }

@@ -13,10 +13,15 @@ public sealed class TicTacToeContext : DbContext
     }
 
     public DbSet<Game> Games { get; set; }
-    public DbSet<Move> Moves { get; set; }
+    // public DbSet<Move> Moves { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // modelBuilder.Entity<Move>(entity =>
+        // {
+        //     entity.HasNoKey();
+        // });
+        
         modelBuilder.Entity<Game>(entity =>
         {
             entity.HasKey(g => g.Id);
@@ -36,11 +41,6 @@ public sealed class TicTacToeContext : DbContext
                     v => JsonSerializer.Serialize(v, (JsonSerializerOptions?)null),
                     v => JsonSerializer.Deserialize<string?[][]>(v, (JsonSerializerOptions?)null)!);
         });
-
-        modelBuilder.Entity<Move>(entity =>
-        {
-            entity.HasNoKey();
-            entity.Property(m => m.p).HasConversion<string>();
-        });
+        
     }
 }

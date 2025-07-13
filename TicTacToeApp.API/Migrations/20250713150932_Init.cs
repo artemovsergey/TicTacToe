@@ -27,18 +27,6 @@ namespace TicTacToeApp.API.Migrations
                 {
                     table.PrimaryKey("PK_Games", x => x.Id);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "Moves",
-                columns: table => new
-                {
-                    p = table.Column<string>(type: "text", nullable: false),
-                    x = table.Column<int>(type: "integer", nullable: false),
-                    y = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                });
         }
 
         /// <inheritdoc />
@@ -46,9 +34,6 @@ namespace TicTacToeApp.API.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Games");
-
-            migrationBuilder.DropTable(
-                name: "Moves");
         }
     }
 }
