@@ -1,14 +1,10 @@
 using System.Text.Json.Serialization;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using TicTacToeApp.API.Data;
 using TicTacToeApp.API.Endpoints;
 using TicTacToeApp.API.Extensions;
 using TicTacToeApp.API.Interfaces;
 using TicTacToeApp.API.Repositories;
-using TicTacToeApp.API.Response;
-using TicTacToeApp.API.Validations;
 using JsonOptions = Microsoft.AspNetCore.Http.Json.JsonOptions;
 
 var builder = WebApplication.CreateBuilder(args);

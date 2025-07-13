@@ -4,17 +4,35 @@
 
 [![deploy](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/deploy.yml/badge.svg)](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/deploy.yml)
 
- - сделать юнит и интеграционные тесты
- - настроить ci/cd
- - добавить общую обработку ошибок +
- - перейти на асинхронность +
- - добавить ct +
- - настроить openapi +
- - настроить валидацию  
+# Запуск приложения
 
-# Report of Coverage Test
+```
+docker-compose up --build
+```
 
-- dotnet tool install -g dotnet-reportgenerator-globaltool
-- установить `coverlet.msbuild`
-- dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
-- reportgenerator -reports:"coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
+**Замечание**: если база данных уже существует выполните команду `docker-compose down -v`, а затем сделайте сборку заново
+
+# Архитектура приложения
+
+- решение содержит проект `MinimalAPI` и проект `xUnit`
+
+# Основные функции
+
+ - конфигурация приложения через переменные окружения локально и в production
+ - юнит и интеграционные тесты локально `dotnet test`
+ - интеграционные тесты используют технологию `TestContainters` для чего нужен Docker 
+ - покрытие > 30%
+ - настроен ci/cd pipeline на github action на запуск тестовы и развертывание на VPS
+ - глобальная обработку ошибок через middleware и стандартизированная модель ответа для исключений 
+ - асинхронная работа с данными с использованием токена отмены
+ - взаимодействие с базой данных Postgres осуществляется через EntityFrameWorkCore посредством механизма миграций.
+ - реализован выбор размерности поля игры
+ - полностью настроен openapi через swagger 
+ - предусмотрена валидация на входные данные
+ - состояние игры храниться базе, что способствует восстановлению игры в любое время
+ - реализована проверка состояния игры с помощью ETag в заголовках ответов
+
+ # Новое
+
+ - добавлены новые переменные окружения в виде **вероятности замены хода** и **частоты шага вероятности**. Теперь можно настраивать любую валидную веятность и номер хода, на какой вероятность может сработать.
+ - для проверки работоспособности API реализована связь с фронтендом на React https://tic-tac-toe-frontend-five.vercel.app/
