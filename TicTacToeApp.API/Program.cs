@@ -11,6 +11,7 @@ using JsonOptions = Microsoft.AspNetCore.Http.Json.JsonOptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors();
 builder.Services.Configure<JsonOptions>(options =>
 {
     options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
@@ -26,6 +27,7 @@ builder.Services.AddDbContext<TicTacToeContext>(o =>
 
 var app = builder.Build();
 app.UseMiddleware<TicTacToeApp.API.Middleware.ExceptionHandlerMiddleware>();
+app.UseCors(o => o.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
