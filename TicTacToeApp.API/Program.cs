@@ -73,7 +73,7 @@ app.MapGet("/health", () => Results.Ok("Проверка работы")).WithNam
                         Reference = new OpenApiReference
                         {
                             Type = ReferenceType.Schema,
-                            Id = "ErrorResponse"
+                            Id = "ProblemDetails"
                         }
                     }
                 }
