@@ -30,7 +30,7 @@ public static class GameEndpoints
             async (IGameAsyncRepository repo, CancellationToken ct) =>
             {
                 return Results.Ok((await repo.GetGamesAsync(ct)).Select(g => new { Id = g.Id }));
-            }).WithTags("Games")
+            }).WithTags("TicTacToeApp.API")
             .WithName("GetAllGames")
             .WithSummary("Список доступных игр")
             .WithDescription("Возвращает список объектов GameDto")
@@ -59,11 +59,6 @@ public static class GameEndpoints
 
                 var game = await repo.CreateGameAsync(TICTACTOE_BOARD_SIZE, ct);
                 return Results.CreatedAtRoute("GetGameById", game);
-            }).WithOpenApi(operation =>
-            {
-                operation.Summary = "Создание новой игры";
-                operation.Description = "Возвращает объект Game";
-                return operation;
             }).Produces<Game>(StatusCodes.Status201Created)
             .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 
