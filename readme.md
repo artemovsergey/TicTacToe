@@ -2,6 +2,8 @@
 
 [![.NET Tests](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml/badge.svg?branch=master&event=push)](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml)
 
+[![deploy](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/deploy.yml/badge.svg)](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/deploy.yml)
+
  - сделать юнит и интеграционные тесты
  - настроить ci/cd
  - добавить общую обработку ошибок +
