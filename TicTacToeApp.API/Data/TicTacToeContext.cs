@@ -9,7 +9,6 @@ public sealed class TicTacToeContext : DbContext
 {
     public TicTacToeContext(DbContextOptions<TicTacToeContext> opt) : base(opt)
     {
-        Database.EnsureDeleted();
         Database.Migrate();
     }
 
