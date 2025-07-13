@@ -56,7 +56,7 @@ public static class GameEndpoints
         app.MapPost("/api/games/new", async (IGameAsyncRepository repo, GameOption? gameOption, CancellationToken ct) =>
             {
                 
-                if (gameOption.size < 3 || gameOption.line_to_win < 1 || gameOption.chance < 1 || gameOption.step < 1 )
+                if (gameOption!.size < 3 || gameOption.line_to_win < 1 || gameOption.chance < 1 || gameOption.step < 1 )
                     return Results.Json<ErrorResponse>(new ErrorResponse(
                             statusCode: "400",
                             message: "Размерность должна быть больше от 3, условие победы, вероятность замены и шаг вероятности положительны"
@@ -210,6 +210,7 @@ public static class GameEndpoints
                 return operation;
             })
             .Produces<Game>(StatusCodes.Status200OK)
+            .Produces<ErrorResponse>(StatusCodes.Status404NotFound)
             .Produces<ErrorResponse>(StatusCodes.Status400BadRequest)
             .Produces<ErrorResponse>(StatusCodes.Status409Conflict)
             .Produces<ErrorResponse>(StatusCodes.Status412PreconditionFailed);

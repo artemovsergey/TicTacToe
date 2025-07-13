@@ -28,6 +28,7 @@ public static class SwaggerServices
 
             c.EnableAnnotations();
             c.SchemaFilter<ErrorResponseSchemaFilter>();
+            c.OperationFilter<ErrorResponseOperationFilter>();
         });
 
         return services;
