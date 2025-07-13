@@ -1,6 +1,7 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
+using TicTacToeApp.API.Dtos;
 using TicTacToeApp.API.Entity;
 using TicTacToeApp.API.Entity.Enums;
 using TicTacToeApp.API.Interfaces;
@@ -13,8 +14,7 @@ namespace TicTacToeApp.API.Endpoints;
 public static class GameEndpoints
 {
     public static WebApplication UseGameEndpoints(
-        this WebApplication app,
-        CancellationToken cancellationToken
+        this WebApplication app
     )
     {
         int TICTACTOE_BOARD_SIZE = int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_BOARD_SIZE")!);
@@ -27,10 +27,11 @@ public static class GameEndpoints
             int.Parse(Environment.GetEnvironmentVariable("TICTACTOE_LINE_TO_WIN")!); // на каком ходу
 
         app.MapGet("/api/games",
-            async (IGameAsyncRepository repo, CancellationToken ct) =>
-            {
-                return Results.Ok((await repo.GetGamesAsync(ct)).Select(g => new { Id = g.Id }));
-            }).WithTags("TicTacToeApp.API")
+                async (IGameAsyncRepository repo, CancellationToken ct) =>
+                {
+                    return Results.Ok(await repo.GetGamesAsync(ct)); //.Select(g => new { Id = g.Id }));
+                })
+            .WithTags("TicTacToeApp.API")
             .WithName("GetAllGames")
             .WithSummary("Список доступных игр")
             .WithDescription("Возвращает список объектов GameDto")
@@ -41,7 +42,8 @@ public static class GameEndpoints
                 async (IGameAsyncRepository repo, Guid Id, CancellationToken ct) =>
                 {
                     return Results.Ok(await repo.FindGameByGuidAsync(Id, ct));
-                }).WithName("GetGameById")
+                })
+            .WithName("GetGameById")
             .WithOpenApi(operation =>
             {
                 operation.Summary = "Получение игры по Id";
@@ -51,9 +53,14 @@ public static class GameEndpoints
             .Produces<ErrorResponse>(StatusCodes.Status404NotFound);
         ;
 
-        app.MapPost("/api/games/new", async (IGameAsyncRepository repo, CancellationToken ct) =>
+        app.MapPost("/api/games/new", async (IGameAsyncRepository repo, GameOption? gameOption, CancellationToken ct) =>
             {
-                if (TICTACTOE_LINE_TO_WIN > TICTACTOE_BOARD_SIZE)
+                TICTACTOE_BOARD_SIZE = gameOption!.size;
+                TICTACTOE_LINE_TO_WIN = gameOption.line_to_win;
+                TICTACTOE_CHANCE = gameOption.chance;
+                TICTACTOE_NUMBER_STEP = gameOption.step;
+                
+                if (gameOption.line_to_win > gameOption.size)
                     return Results.BadRequest(
                         "Количество одинаковых элементов должно быть меньше или равно размерности доски!");
 
@@ -121,7 +128,7 @@ public static class GameEndpoints
 
                     game.CurrentStep += 1;
 
-                    // Проверяем особое условие на каждый 2 ход с шансом 50% замены выбора
+                    // Проверяем особое условие на каждый n ход с шансом m % замены выбора
                     bool maybeReplace = false;
                     if (game.CurrentStep > 0 && game.CurrentStep % TICTACTOE_NUMBER_STEP == 0)
                     {

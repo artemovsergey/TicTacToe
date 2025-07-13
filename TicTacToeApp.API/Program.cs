@@ -45,5 +45,5 @@ app.MapGet("/health", () => Results.Ok("Проверка работы"))
     .WithSummary("Проверка здоровья сервиса");
 
 
-app.UseGameEndpoints(cancellationToken: default!);
+app.UseGameEndpoints();
 app.Run();
