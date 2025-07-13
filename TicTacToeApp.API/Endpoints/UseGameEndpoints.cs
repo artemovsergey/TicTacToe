@@ -59,7 +59,11 @@ public static class GameEndpoints
 
                 var game = await repo.CreateGameAsync(TICTACTOE_BOARD_SIZE, ct);
                 return Results.CreatedAtRoute("GetGameById", game);
-            }).Produces<Game>(StatusCodes.Status201Created)
+            }).WithTags("TicTacToeApp.API")
+            .WithName("CreateGame")
+            .WithSummary("Создание новой игры")
+            .WithDescription("Возвращает объект игры Game")
+            .Produces<Game>(StatusCodes.Status201Created)
             .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 
         app.MapPost("api/games/{game_id:guid}/move",
