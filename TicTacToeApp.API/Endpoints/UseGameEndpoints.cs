@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TicTacToeApp.API.Entity;
 using TicTacToeApp.API.Entity.Enums;
 using TicTacToeApp.API.Interfaces;
+using TicTacToeApp.API.Response;
 using TicTacToeApp.API.Services;
 using TicTacToeApp.API.Validations;
 
@@ -34,7 +35,7 @@ public static class GameEndpoints
                 operation.Description = "Возвращает список объектов GameDto";
                 return operation;
             }).Produces<Game>(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status400BadRequest);
+            .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 
         app.MapGet("/api/games/{Id}",
                 async (IGameAsyncRepository repo, Guid Id, CancellationToken ct) =>
@@ -47,7 +48,7 @@ public static class GameEndpoints
                 operation.Description = "Возвращает объект Game";
                 return operation;
             }).Produces<Game>(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status404NotFound);
+            .Produces<ProblemDetails>(StatusCodes.Status404NotFound);
         ;
 
         app.MapPost("/api/games/new", async (IGameAsyncRepository repo, CancellationToken ct) =>
@@ -64,7 +65,7 @@ public static class GameEndpoints
                 operation.Description = "Возвращает объект Game";
                 return operation;
             }).Produces<Game>(StatusCodes.Status201Created)
-            .Produces(StatusCodes.Status400BadRequest);
+            .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 
         app.MapPost("api/games/{game_id:guid}/move",
                 async (HttpResponse r,
@@ -177,8 +178,8 @@ public static class GameEndpoints
                 operation.Description = "Возвращает состояние игры в виде объекта game";
                 return operation;
             }).Produces<Game>(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status400BadRequest)
-            .Produces(StatusCodes.Status404NotFound);
+            .Produces<ErrorResponse>(StatusCodes.Status400BadRequest)
+            .Produces<ErrorResponse>(StatusCodes.Status404NotFound);
 
 
         return app;

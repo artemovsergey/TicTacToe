@@ -1,11 +1,13 @@
 using System.Text.Json.Serialization;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using TicTacToeApp.API.Data;
 using TicTacToeApp.API.Endpoints;
 using TicTacToeApp.API.Extensions;
 using TicTacToeApp.API.Interfaces;
 using TicTacToeApp.API.Repositories;
+using TicTacToeApp.API.Response;
 using TicTacToeApp.API.Validations;
 using JsonOptions = Microsoft.AspNetCore.Http.Json.JsonOptions;
 
@@ -36,7 +38,52 @@ app.UseSwaggerUI(c =>
 });
 
 app.MapOpenApi();
-app.MapGet("/health", () => Results.Ok("Проверка работы"));
+
+app.MapGet("/health", () => Results.Ok("Проверка работы")).WithName("GetProductById")
+    .WithOpenApi(operation =>
+    {
+        operation.Responses.Add("400", new OpenApiResponse
+        {
+            Description = "Bad Request",
+            Content = new Dictionary<string, OpenApiMediaType>
+            {
+                ["application/json"] = new OpenApiMediaType
+                {
+                    Schema = new OpenApiSchema
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.Schema,
+                            Id = "ErrorResponse"
+                        }
+                    }
+                }
+            }
+        });
+    
+        operation.Responses.Add("404", new OpenApiResponse
+        {
+            Description = "Not Found",
+            Content = new Dictionary<string, OpenApiMediaType>
+            {
+                ["application/json"] = new OpenApiMediaType
+                {
+                    Schema = new OpenApiSchema
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.Schema,
+                            Id = "ErrorResponse"
+                        }
+                    }
+                }
+            }
+        });
+    
+        return operation;
+    });
+
+
 app.UseGameEndpoints(cancellationToken: default!);
 app.Run();
 
