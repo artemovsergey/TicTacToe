@@ -34,7 +34,7 @@ public static class GameEndpoints
             .WithTags("TicTacToeApp.API")
             .WithName("GetAllGames")
             .WithSummary("Список доступных игр")
-            .WithDescription("Возвращает список объектов GameDto")
+            .WithDescription("Возвращает список объектов Game")
             .Produces<List<Game>>(StatusCodes.Status200OK)
             .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 

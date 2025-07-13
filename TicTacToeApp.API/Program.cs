@@ -42,7 +42,7 @@ app.MapOpenApi();
 app.MapGet("/health", () => Results.Ok("Проверка работы"))
     .WithTags("TicTacToeApp.API")
     .WithName("CheckHealth")
-    .WithSummary("Проверка здоровья сервиса");
+    .WithSummary("Проверка здоровья приложения");
 
 
 app.UseGameEndpoints();
