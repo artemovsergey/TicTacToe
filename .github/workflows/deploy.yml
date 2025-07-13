@@ -39,7 +39,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            git clone git@github.com:artemovsergey/TicTacToeApp.git /home/user1/tictactoeapp/
+            git clone https://github.com/artemovsergey/TicTacToeApp.git /home/user1/tictactoeapp/
 
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
