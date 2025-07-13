@@ -1,0 +1,52 @@
+name: deploy
+
+on:
+  push:
+    branches: [ master ]
+env:
+  VPS_HOST: ${{ secrets.VPS_HOST }}
+  VPS_USERNAME: ${{ secrets.VPS_USERNAME }}
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+jobs:
+  
+  publish:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '9.0'
+          
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Delete old repository from VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.VPS_HOST }}
+          username: ${{ env.VPS_USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          script: |
+            rm -rf /home/user1/tictactoeapp
+
+      - name: Сlone new repo
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.VPS_HOST }}
+          username: ${{ env.VPS_USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          script: |
+            git clone https://github.com/artemovsergey/TicTacToeApp.git /home/user1/tictactoeapp/
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.VPS_HOST }}
+          username: ${{ env.VPS_USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          script: |
+            chmod +x /home/user1/tictactoeapp/scripts/vps.sh
+            /home/user1/tictactoeapp/scripts/vps.sh

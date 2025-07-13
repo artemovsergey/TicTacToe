@@ -1,8 +1,10 @@
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using TicTacToeApp.API.Entity;
 using TicTacToeApp.API.Entity.Enums;
 using TicTacToeApp.API.Interfaces;
 using TicTacToeApp.API.Services;
+using TicTacToeApp.API.Validations;
 
 namespace TicTacToeApp.API.Endpoints;
 
@@ -46,17 +48,21 @@ public static class GameEndpoints
             async (HttpResponse r,
                 [FromHeader(Name = "If-Match")] string? ifMatchHeader,
                 IGameAsyncRepository repo,
+                MoveValidator moveValidator,
+                GameValidator gameValidator,
                 Guid game_id,
                 Move move,
                 CancellationToken ct) =>
             {
                 var game = await repo.FindGameByGuidAsync(game_id, ct);
+                
                 var currentETag = EtagService.GenerateETag(game);
                 if (ifMatchHeader != null && ifMatchHeader != currentETag)
                 {
                     return Results.StatusCode(StatusCodes.Status412PreconditionFailed);
                 }
-
+                
+                
                 // Проверяем статус игры - активная она или завершена
 
                 if (game.Status != StatusGame.Active)

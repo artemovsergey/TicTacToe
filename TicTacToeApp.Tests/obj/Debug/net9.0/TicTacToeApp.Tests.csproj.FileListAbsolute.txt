@@ -141,3 +141,4 @@ C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\ICSharpCod
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Renci.SshNet.dll
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Testcontainers.dll
 C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\Testcontainers.PostgreSql.dll
+C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.Tests\bin\Debug\net9.0\FluentValidation.dll

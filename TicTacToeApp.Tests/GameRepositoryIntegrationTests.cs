@@ -12,8 +12,8 @@ using Xunit;
 public class GameRepositoryIntegrationTests : IAsyncLifetime
 {
     private readonly PostgreSqlContainer _postgreSqlContainer;
-    private TicTacToeContext _dbContext;
-    private GameAsyncRepository _repository;
+    private  TicTacToeContext? _dbContext;
+    private GameAsyncRepository? _repository;
 
     public GameRepositoryIntegrationTests()
     {
@@ -48,7 +48,7 @@ public class GameRepositoryIntegrationTests : IAsyncLifetime
 
     public async Task DisposeAsync()
     {
-        await _dbContext.DisposeAsync();
+        await _dbContext!.DisposeAsync();
         await _postgreSqlContainer.DisposeAsync();
     }
 
@@ -56,7 +56,7 @@ public class GameRepositoryIntegrationTests : IAsyncLifetime
     public async Task GetGamesAsync_ShouldReturn5GamesFromDatabase()
     {
         // Act
-        var games = await _repository.GetGamesAsync(CancellationToken.None);
+        var games = await _repository!.GetGamesAsync(CancellationToken.None);
         
         // Assert
         Assert.Equal(5, games.Count());

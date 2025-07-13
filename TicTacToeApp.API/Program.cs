@@ -1,10 +1,12 @@
 using System.Text.Json.Serialization;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using TicTacToeApp.API.Data;
 using TicTacToeApp.API.Endpoints;
 using TicTacToeApp.API.Extensions;
 using TicTacToeApp.API.Interfaces;
 using TicTacToeApp.API.Repositories;
+using TicTacToeApp.API.Validations;
 using JsonOptions = Microsoft.AspNetCore.Http.Json.JsonOptions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,8 @@ builder.Services.Configure<JsonOptions>(options =>
 
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerServices();
+builder.Services.AddScoped<MoveValidator>();
+builder.Services.AddScoped<GameValidator>();
 builder.Services.AddScoped<IGameAsyncRepository, GameAsyncRepository>();
 builder.Services.AddDbContext<TicTacToeContext>(o =>
     o.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
