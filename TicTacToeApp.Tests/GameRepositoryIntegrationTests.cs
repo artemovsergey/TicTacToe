@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 using TicTacToeApp.API.Data;
 using TicTacToeApp.API.Entity;
 using TicTacToeApp.API.Repositories;
+using Moq;
 
 namespace TicTacToeApp.Tests;
 
@@ -15,7 +16,7 @@ public class GameRepositoryIntegrationTests : IAsyncLifetime
     private readonly PostgreSqlContainer _postgreSqlContainer;
     private  TicTacToeContext? _dbContext;
     private GameAsyncRepository? _repository;
-    private ILogger<GameAsyncRepository> logger;
+    private Mock<ILogger<GameAsyncRepository>> _loggerMock;
 
     public GameRepositoryIntegrationTests()
     {
@@ -25,6 +26,8 @@ public class GameRepositoryIntegrationTests : IAsyncLifetime
             .WithUsername("postgres")
             .WithPassword("postgres")
             .Build();
+        
+        _loggerMock = new Mock<ILogger<GameAsyncRepository>>();
     }
 
     public async Task InitializeAsync()
@@ -45,7 +48,7 @@ public class GameRepositoryIntegrationTests : IAsyncLifetime
         }
         await _dbContext.SaveChangesAsync();
         
-        _repository = new GameAsyncRepository(_dbContext, logger);
+        _repository = new GameAsyncRepository(_dbContext, _loggerMock.Object);
     }
 
     public async Task DisposeAsync()
