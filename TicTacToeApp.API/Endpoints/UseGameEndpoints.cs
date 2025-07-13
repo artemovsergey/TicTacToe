@@ -65,7 +65,7 @@ public static class GameEndpoints
                         "Количество одинаковых элементов должно быть меньше или равно размерности доски!");
 
                 var game = await repo.CreateGameAsync(TICTACTOE_BOARD_SIZE, ct);
-                return Results.CreatedAtRoute("GetGameById", game);
+                return Results.CreatedAtRoute("GetGameById", game, value: game);
             }).WithTags("TicTacToeApp.API")
             .WithName("CreateGame")
             .WithSummary("Создание новой игры")
