@@ -34,12 +34,12 @@ class Games {
  - интеграционные тесты используют технологию `TestContainters`, для чего нужен Docker 
  - покрытие API тестами > 30%
 
-[![tests](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml/badge.svg?branch=master&event=push)](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml)
+[![tests](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml/badge.svg?branch=master&event=push)](https://github.com/artemovsergey/TicTacToe/actions/workflows/dotnet-test.yaml)
  - настроен ci/cd pipeline на github action на запуск тестов:
 
  - осуществлено развертывание на VPS:
 
-[![deploy](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/deploy.yml/badge.svg)](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/deploy.yml)
+[![deploy](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/deploy.yml/badge.svg)](https://github.com/artemovsergey/TicTacToe/actions/workflows/deploy.yml)
  
  - глобальная обработка ошибок через `middleware` и стандартизированная модель ответа для исключений 
  - асинхронная работа с данными с использованием токена отмены
