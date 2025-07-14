@@ -31,17 +31,22 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
+      - name: Install dependencies
+        run: |
+          dotnet tool install -g dotnet-reportgenerator-globaltool
+          dotnet add package coverlet.msbuild --version 3.2.0
+
       - name: Build
         run: dotnet build --no-restore --configuration Release
 
-      - name: Test
-        env:
-          POSTGRES_HOST: localhost
-          POSTGRES_PORT: 5432
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: testdb
-        run: dotnet test --no-build --configuration Release --verbosity normal
+#      - name: Test
+#        env:
+#          POSTGRES_HOST: localhost
+#          POSTGRES_PORT: 5432
+#          POSTGRES_USER: postgres
+#          POSTGRES_PASSWORD: postgres
+#          POSTGRES_DB: testdb
+#        run: dotnet test --no-build --configuration Release --verbosity normal
 
       - name: Test with coverage
         env:
@@ -55,6 +60,11 @@ jobs:
                 --collect:"XPlat Code Coverage" \
                 -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura \
                 --logger trx
+
+      - name: Generate report
+        run: |
+          reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html   
+      
       - name: Publish test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -63,3 +73,9 @@ jobs:
           path: |
             ./**/*.trx
             ./**/coverage.cobertura.xml
+            
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./coveragereport
