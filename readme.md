@@ -10,6 +10,22 @@ docker-compose up --build
 
 - решение содержит проект `MinimalAPI` и проект `xUnit`
 
+# Модель игры
+
+```mermaid
+classDiagram
+direction BT
+class Games {
+   text Status
+   text Board
+   text Result
+   timestamp with time zone CreatedAt
+   text CurrentMove
+   bigint CurrentStep
+   uuid Id
+}
+```
+
 # Основные функции
 
  - конфигурация приложения выполняется через переменные окружения
