@@ -31,7 +31,7 @@ class Games {
  - конфигурация приложения выполняется через переменные окружения
  - unit и интеграционные тесты работают локально по команде `dotnet test`
  - интеграционные тесты используют технологию `TestContainters`, для чего нужен Docker 
- - метрики покрытия API тестами
+ - метрики покрытия API тестами на github pages
 
 [![tests](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml/badge.svg?branch=master&event=push)](https://github.com/artemovsergey/TicTacToe/actions/workflows/dotnet-test.yaml)
  - настроен ci/cd pipeline на github action на запуск тестов:
@@ -57,8 +57,7 @@ class Games {
 - перейти в тестовый проект и создать отчет: `reportgenerator -reports:"coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html`
 - отчет находится в папке `coveragerepost` в виде index.html
 
-
  # Новое
 
  - добавлены новые переменные окружения в виде **вероятности замены хода** и **частоты шага вероятности**. Теперь можно настраивать любую валидную вероятность и номер хода, на котором вероятность может сработать.
- - для проверки работоспособности API реализована связь с фронтендом на React https://tic-tac-toe-frontend-five.vercel.app/ (в разработке)
+ - для проверки работоспособности API реализована связь с фронтендом на React.
