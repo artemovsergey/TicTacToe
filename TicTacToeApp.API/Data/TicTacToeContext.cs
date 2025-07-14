@@ -13,15 +13,9 @@ public sealed class TicTacToeContext : DbContext
     }
 
     public DbSet<Game> Games { get; set; }
-    // public DbSet<Move> Moves { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // modelBuilder.Entity<Move>(entity =>
-        // {
-        //     entity.HasNoKey();
-        // });
-        
         modelBuilder.Entity<Game>(entity =>
         {
             entity.HasKey(g => g.Id);
