@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.3594" branch-rate="0.0273" version="1.9" timestamp="1752276802" lines-covered="188" lines-valid="523" branches-covered="4" branches-valid="146">
+<coverage line-rate="0.2432" branch-rate="0.024" version="1.9" timestamp="1752472672" lines-covered="144" lines-valid="592" branches-covered="4" branches-valid="166">
   <sources>
     <source>C:\Users\asv\Desktop\TicTacToeApp\TicTacToeApp.API\</source>
   </sources>
   <packages>
-    <package name="TicTacToeApp.API" line-rate="0.3594" branch-rate="0.0273" complexity="179">
+    <package name="TicTacToeApp.API" line-rate="0.2432" branch-rate="0.024" complexity="203">
       <classes>
         <class name="Program" filename="Program.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -15,12 +15,12 @@
                 <line number="13" hits="0" branch="False" />
                 <line number="14" hits="0" branch="False" />
                 <line number="15" hits="0" branch="False" />
-                <line number="17" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
                 <line number="18" hits="0" branch="False" />
                 <line number="19" hits="0" branch="False" />
                 <line number="20" hits="0" branch="False" />
                 <line number="21" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
                 <line number="24" hits="0" branch="False" />
                 <line number="25" hits="0" branch="False" />
                 <line number="26" hits="0" branch="False" />
@@ -28,48 +28,15 @@
                 <line number="28" hits="0" branch="False" />
                 <line number="29" hits="0" branch="False" />
                 <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
                 <line number="32" hits="0" branch="False" />
-                <line number="33" hits="0" branch="False" />
                 <line number="34" hits="0" branch="False" />
-                <line number="35" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="10" hits="0" branch="False" />
-            <line number="12" hits="0" branch="False" />
-            <line number="13" hits="0" branch="False" />
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
-            <line number="17" hits="0" branch="False" />
-            <line number="18" hits="0" branch="False" />
-            <line number="19" hits="0" branch="False" />
-            <line number="20" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="29" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
-            <line number="32" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
-            <line number="34" hits="0" branch="False" />
-            <line number="35" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="TicTacToeApp.API.Services.EtagService" filename="Services\EtagService.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="GenerateETag" signature="(TicTacToeApp.API.Entity.Game)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="10" hits="0" branch="False" />
-                <line number="12" hits="0" branch="False" />
-                <line number="13" hits="0" branch="False" />
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
-                <line number="16" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
@@ -80,14 +47,57 @@
             <line number="14" hits="0" branch="False" />
             <line number="15" hits="0" branch="False" />
             <line number="16" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="TicTacToeApp.API.Services.GameService" filename="Services\GameService.cs" line-rate="0" branch-rate="0" complexity="84">
+        <class name="TicTacToeApp.API.Services.EtagService" filename="Services\EtagService.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="GenerateETag" signature="(TicTacToeApp.API.Entity.Game)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="TicTacToeApp.API.Services.GameService" filename="Services\GameService.cs" line-rate="0.1714" branch-rate="0.0454" complexity="88">
           <methods>
             <method name="CheckBoard" signature="(System.String[][],System.String)" line-rate="0" branch-rate="0" complexity="54">
               <lines>
-                <line number="8" hits="0" branch="False" />
-                <line number="9" hits="0" branch="True" condition-coverage="0% (0/48)">
+                <line number="9" hits="0" branch="False" />
+                <line number="10" hits="0" branch="True" condition-coverage="0% (0/48)">
                   <conditions>
                     <condition number="12" type="jump" coverage="0%" />
                     <condition number="29" type="jump" coverage="0%" />
@@ -115,7 +125,6 @@
                     <condition number="398" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="10" hits="0" branch="False" />
                 <line number="11" hits="0" branch="False" />
                 <line number="12" hits="0" branch="False" />
                 <line number="13" hits="0" branch="False" />
@@ -124,96 +133,97 @@
                 <line number="16" hits="0" branch="False" />
                 <line number="17" hits="0" branch="False" />
                 <line number="18" hits="0" branch="False" />
-                <line number="19" hits="0" branch="True" condition-coverage="0% (0/4)">
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="True" condition-coverage="0% (0/4)">
                   <conditions>
                     <condition number="416" type="jump" coverage="0%" />
                     <condition number="429" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="22" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
-                <line number="29" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="23" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="490" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="31" hits="0" branch="False" />
                 <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
               </lines>
             </method>
             <method name="CheckBoardN" signature="(System.String[][],System.String,System.Int32)" line-rate="0" branch-rate="0" complexity="16">
               <lines>
-                <line number="34" hits="0" branch="False" />
                 <line number="35" hits="0" branch="False" />
-                <line number="38" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="36" hits="0" branch="False" />
+                <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="189" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="39" hits="0" branch="False" />
-                <line number="40" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="40" hits="0" branch="False" />
+                <line number="41" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="171" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="41" hits="0" branch="False" />
-                <line number="43" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="42" hits="0" branch="False" />
+                <line number="44" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="36" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="44" hits="0" branch="False" />
-                <line number="47" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="45" hits="0" branch="False" />
+                <line number="48" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="56" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="48" hits="0" branch="False" />
-                <line number="51" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="49" hits="0" branch="False" />
+                <line number="52" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="87" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="52" hits="0" branch="False" />
-                <line number="55" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="53" hits="0" branch="False" />
+                <line number="56" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="118" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="56" hits="0" branch="False" />
-                <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="57" hits="0" branch="False" />
+                <line number="60" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="146" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="60" hits="0" branch="False" />
                 <line number="61" hits="0" branch="False" />
                 <line number="62" hits="0" branch="False" />
-                <line number="65" hits="0" branch="False" />
-                <line number="66" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="63" hits="0" branch="False" />
+                <line number="66" hits="0" branch="False" />
+                <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="236" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="67" hits="0" branch="False" />
+                <line number="68" hits="0" branch="False" />
               </lines>
             </method>
             <method name="CheckLine" signature="(System.String[][],System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Int32)" line-rate="0" branch-rate="0" complexity="12">
               <lines>
-                <line number="71" hits="0" branch="False" />
                 <line number="72" hits="0" branch="False" />
                 <line number="73" hits="0" branch="False" />
-                <line number="75" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="74" hits="0" branch="False" />
+                <line number="76" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="99" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="76" hits="0" branch="False" />
                 <line number="77" hits="0" branch="False" />
                 <line number="78" hits="0" branch="False" />
-                <line number="81" hits="0" branch="True" condition-coverage="0% (0/8)">
+                <line number="79" hits="0" branch="False" />
+                <line number="82" hits="0" branch="True" condition-coverage="0% (0/8)">
                   <conditions>
                     <condition number="28" type="jump" coverage="0%" />
                     <condition number="32" type="jump" coverage="0%" />
@@ -221,34 +231,58 @@
                     <condition number="54" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="82" hits="0" branch="False" />
-                <line number="84" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="83" hits="0" branch="False" />
+                <line number="85" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="75" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="85" hits="0" branch="False" />
-                <line number="87" hits="0" branch="False" />
+                <line number="86" hits="0" branch="False" />
                 <line number="88" hits="0" branch="False" />
-                <line number="90" hits="0" branch="False" />
+                <line number="89" hits="0" branch="False" />
                 <line number="91" hits="0" branch="False" />
+                <line number="92" hits="0" branch="False" />
               </lines>
             </method>
             <method name="GetWinResult" signature="(System.String)" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="95" hits="0" branch="False" />
-                <line number="96" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="96" hits="0" branch="False" />
+                <line number="97" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="12" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="97" hits="0" branch="False" />
+                <line number="98" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="CreateEmptyBoard" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="101" hits="4" branch="False" />
+                <line number="102" hits="4" branch="False" />
+                <line number="103" hits="44" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="59" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="104" hits="18" branch="False" />
+                <line number="105" hits="18" branch="False" />
+                <line number="106" hits="304" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="44" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="107" hits="134" branch="False" />
+                <line number="108" hits="134" branch="False" />
+                <line number="109" hits="134" branch="False" />
+                <line number="110" hits="18" branch="False" />
+                <line number="112" hits="4" branch="False" />
+                <line number="113" hits="4" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="8" hits="0" branch="False" />
-            <line number="9" hits="0" branch="True" condition-coverage="0% (0/48)">
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="0" branch="True" condition-coverage="0% (0/48)">
               <conditions>
                 <condition number="12" type="jump" coverage="0%" />
                 <condition number="29" type="jump" coverage="0%" />
@@ -276,7 +310,6 @@
                 <condition number="398" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="10" hits="0" branch="False" />
             <line number="11" hits="0" branch="False" />
             <line number="12" hits="0" branch="False" />
             <line number="13" hits="0" branch="False" />
@@ -285,88 +318,89 @@
             <line number="16" hits="0" branch="False" />
             <line number="17" hits="0" branch="False" />
             <line number="18" hits="0" branch="False" />
-            <line number="19" hits="0" branch="True" condition-coverage="0% (0/4)">
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="True" condition-coverage="0% (0/4)">
               <conditions>
                 <condition number="416" type="jump" coverage="0%" />
                 <condition number="429" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="22" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="29" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="23" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="490" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="31" hits="0" branch="False" />
             <line number="32" hits="0" branch="False" />
-            <line number="34" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
             <line number="35" hits="0" branch="False" />
-            <line number="38" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="36" hits="0" branch="False" />
+            <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="189" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="39" hits="0" branch="False" />
-            <line number="40" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="40" hits="0" branch="False" />
+            <line number="41" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="171" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="41" hits="0" branch="False" />
-            <line number="43" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="42" hits="0" branch="False" />
+            <line number="44" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="36" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="44" hits="0" branch="False" />
-            <line number="47" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="45" hits="0" branch="False" />
+            <line number="48" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="56" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="48" hits="0" branch="False" />
-            <line number="51" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="49" hits="0" branch="False" />
+            <line number="52" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="87" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="52" hits="0" branch="False" />
-            <line number="55" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="53" hits="0" branch="False" />
+            <line number="56" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="118" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="56" hits="0" branch="False" />
-            <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="57" hits="0" branch="False" />
+            <line number="60" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="146" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="60" hits="0" branch="False" />
             <line number="61" hits="0" branch="False" />
             <line number="62" hits="0" branch="False" />
-            <line number="65" hits="0" branch="False" />
-            <line number="66" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="63" hits="0" branch="False" />
+            <line number="66" hits="0" branch="False" />
+            <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="236" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="67" hits="0" branch="False" />
-            <line number="71" hits="0" branch="False" />
+            <line number="68" hits="0" branch="False" />
             <line number="72" hits="0" branch="False" />
             <line number="73" hits="0" branch="False" />
-            <line number="75" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="74" hits="0" branch="False" />
+            <line number="76" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="99" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="76" hits="0" branch="False" />
             <line number="77" hits="0" branch="False" />
             <line number="78" hits="0" branch="False" />
-            <line number="81" hits="0" branch="True" condition-coverage="0% (0/8)">
+            <line number="79" hits="0" branch="False" />
+            <line number="82" hits="0" branch="True" condition-coverage="0% (0/8)">
               <conditions>
                 <condition number="28" type="jump" coverage="0%" />
                 <condition number="32" type="jump" coverage="0%" />
@@ -374,223 +408,205 @@
                 <condition number="54" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="82" hits="0" branch="False" />
-            <line number="84" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="83" hits="0" branch="False" />
+            <line number="85" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="75" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="85" hits="0" branch="False" />
-            <line number="87" hits="0" branch="False" />
+            <line number="86" hits="0" branch="False" />
             <line number="88" hits="0" branch="False" />
-            <line number="90" hits="0" branch="False" />
+            <line number="89" hits="0" branch="False" />
             <line number="91" hits="0" branch="False" />
-            <line number="95" hits="0" branch="False" />
-            <line number="96" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="92" hits="0" branch="False" />
+            <line number="96" hits="0" branch="False" />
+            <line number="97" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="12" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="97" hits="0" branch="False" />
+            <line number="98" hits="0" branch="False" />
+            <line number="101" hits="4" branch="False" />
+            <line number="102" hits="4" branch="False" />
+            <line number="103" hits="44" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="59" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="104" hits="18" branch="False" />
+            <line number="105" hits="18" branch="False" />
+            <line number="106" hits="304" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="44" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="107" hits="134" branch="False" />
+            <line number="108" hits="134" branch="False" />
+            <line number="109" hits="134" branch="False" />
+            <line number="110" hits="18" branch="False" />
+            <line number="112" hits="4" branch="False" />
+            <line number="113" hits="4" branch="False" />
           </lines>
         </class>
         <class name="TicTacToeApp.API.Response.ErrorResponse" filename="Response\ErrorResponse.cs" line-rate="0" branch-rate="1" complexity="4">
           <methods>
             <method name="get_StatusCode" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_Message" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_Detail" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(System.String,System.String,System.String)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="0" branch="False" />
-                <line number="6" hits="0" branch="False" />
                 <line number="7" hits="0" branch="False" />
                 <line number="8" hits="0" branch="False" />
                 <line number="9" hits="0" branch="False" />
                 <line number="10" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
+                <line number="12" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="12" hits="0" branch="False" />
-            <line number="13" hits="0" branch="False" />
-            <line number="14" hits="0" branch="False" />
-            <line number="5" hits="0" branch="False" />
-            <line number="6" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
             <line number="7" hits="0" branch="False" />
             <line number="8" hits="0" branch="False" />
             <line number="9" hits="0" branch="False" />
             <line number="10" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="TicTacToeApp.API.Repositories.GameAsyncRepository" filename="Repositories\GameRepository.cs" line-rate="1" branch-rate="1" complexity="5">
+        <class name="TicTacToeApp.API.Repositories.GameAsyncRepository" filename="Repositories\GameRepository.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="CreateEmptyBoard" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="4">
-              <lines>
-                <line number="42" hits="4" branch="False" />
-                <line number="43" hits="4" branch="False" />
-                <line number="44" hits="44" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="59" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
-                <line number="45" hits="18" branch="False" />
-                <line number="46" hits="18" branch="False" />
-                <line number="47" hits="304" branch="True" condition-coverage="100% (2/2)">
-                  <conditions>
-                    <condition number="44" type="jump" coverage="100%" />
-                  </conditions>
-                </line>
-                <line number="48" hits="134" branch="False" />
-                <line number="49" hits="134" branch="False" />
-                <line number="50" hits="134" branch="False" />
-                <line number="51" hits="18" branch="False" />
-                <line number="53" hits="4" branch="False" />
-                <line number="54" hits="4" branch="False" />
-              </lines>
-            </method>
             <method name=".ctor" signature="(TicTacToeApp.API.Data.TicTacToeContext,Microsoft.Extensions.Logging.ILogger`1&lt;TicTacToeApp.API.Repositories.GameAsyncRepository&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="8" hits="5" branch="False" />
+                <line number="10" hits="2" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="42" hits="4" branch="False" />
-            <line number="43" hits="4" branch="False" />
-            <line number="44" hits="44" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="59" type="jump" coverage="100%" />
-              </conditions>
-            </line>
-            <line number="45" hits="18" branch="False" />
-            <line number="46" hits="18" branch="False" />
-            <line number="47" hits="304" branch="True" condition-coverage="100% (2/2)">
-              <conditions>
-                <condition number="44" type="jump" coverage="100%" />
-              </conditions>
-            </line>
-            <line number="48" hits="134" branch="False" />
-            <line number="49" hits="134" branch="False" />
-            <line number="50" hits="134" branch="False" />
-            <line number="51" hits="18" branch="False" />
-            <line number="53" hits="4" branch="False" />
-            <line number="54" hits="4" branch="False" />
-            <line number="8" hits="5" branch="False" />
+            <line number="10" hits="2" branch="False" />
           </lines>
         </class>
         <class name="TicTacToeApp.API.Repositories.GameAsyncRepository/&lt;CreateGameAsync&gt;d__5" filename="Repositories\GameRepository.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="27" hits="0" branch="False" />
+                <line number="28" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="29" type="jump" coverage="0%" />
+                    <condition number="40" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
-                <line number="29" hits="0" branch="False" />
                 <line number="30" hits="0" branch="False" />
                 <line number="31" hits="0" branch="False" />
                 <line number="32" hits="0" branch="False" />
                 <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="27" hits="0" branch="False" />
+            <line number="28" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="29" type="jump" coverage="0%" />
+                <condition number="40" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="29" hits="0" branch="False" />
             <line number="30" hits="0" branch="False" />
             <line number="31" hits="0" branch="False" />
             <line number="32" hits="0" branch="False" />
             <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
           </lines>
         </class>
         <class name="TicTacToeApp.API.Repositories.GameAsyncRepository/&lt;FindGameByGuidAsync&gt;d__3" filename="Repositories\GameRepository.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="11" hits="0" branch="False" />
-                <line number="12" hits="0" branch="False" />
-                <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="13" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="313" type="jump" coverage="0%" />
+                    <condition number="336" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="14" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="11" hits="0" branch="False" />
-            <line number="12" hits="0" branch="False" />
-            <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="13" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="313" type="jump" coverage="0%" />
+                <condition number="336" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="14" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
           </lines>
         </class>
         <class name="TicTacToeApp.API.Repositories.GameAsyncRepository/&lt;GetGamesAsync&gt;d__4" filename="Repositories\GameRepository.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="17" hits="1" branch="False" />
-                <line number="18" hits="1" branch="False" />
-                <line number="19" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="17" hits="1" branch="False" />
-            <line number="18" hits="1" branch="False" />
-            <line number="19" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
           </lines>
         </class>
         <class name="TicTacToeApp.API.Repositories.GameAsyncRepository/&lt;UpdateGameAsync&gt;d__6" filename="Repositories\GameRepository.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="36" hits="0" branch="False" />
-                <line number="37" hits="0" branch="False" />
-                <line number="38" hits="0" branch="False" />
-                <line number="39" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="36" hits="0" branch="False" />
-            <line number="37" hits="0" branch="False" />
-            <line number="38" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="TicTacToeApp.API.Migrations.Init" filename="Migrations\20250709212659_Init.cs" line-rate="0.8284999999999999" branch-rate="1" complexity="2">
+        <class name="TicTacToeApp.API.Migrations.Init" filename="Migrations\20250713150932_Init.cs" line-rate="0.8181" branch-rate="1" complexity="2">
           <methods>
             <method name="Up" signature="(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -611,28 +627,15 @@
                 <line number="27" hits="2" branch="False" />
                 <line number="28" hits="2" branch="False" />
                 <line number="29" hits="4" branch="False" />
-                <line number="31" hits="2" branch="False" />
-                <line number="32" hits="2" branch="False" />
-                <line number="33" hits="2" branch="False" />
-                <line number="34" hits="2" branch="False" />
-                <line number="35" hits="2" branch="False" />
-                <line number="36" hits="2" branch="False" />
-                <line number="37" hits="2" branch="False" />
-                <line number="38" hits="2" branch="False" />
-                <line number="39" hits="2" branch="False" />
-                <line number="40" hits="2" branch="False" />
-                <line number="41" hits="4" branch="False" />
-                <line number="42" hits="2" branch="False" />
+                <line number="30" hits="2" branch="False" />
               </lines>
             </method>
             <method name="Down" signature="(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="46" hits="0" branch="False" />
-                <line number="47" hits="0" branch="False" />
-                <line number="48" hits="0" branch="False" />
-                <line number="50" hits="0" branch="False" />
-                <line number="51" hits="0" branch="False" />
-                <line number="52" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
@@ -654,27 +657,14 @@
             <line number="27" hits="2" branch="False" />
             <line number="28" hits="2" branch="False" />
             <line number="29" hits="4" branch="False" />
-            <line number="31" hits="2" branch="False" />
-            <line number="32" hits="2" branch="False" />
-            <line number="33" hits="2" branch="False" />
-            <line number="34" hits="2" branch="False" />
-            <line number="35" hits="2" branch="False" />
-            <line number="36" hits="2" branch="False" />
-            <line number="37" hits="2" branch="False" />
-            <line number="38" hits="2" branch="False" />
-            <line number="39" hits="2" branch="False" />
-            <line number="40" hits="2" branch="False" />
-            <line number="41" hits="4" branch="False" />
-            <line number="42" hits="2" branch="False" />
-            <line number="46" hits="0" branch="False" />
-            <line number="47" hits="0" branch="False" />
-            <line number="48" hits="0" branch="False" />
-            <line number="50" hits="0" branch="False" />
-            <line number="51" hits="0" branch="False" />
-            <line number="52" hits="0" branch="False" />
+            <line number="30" hits="2" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="TicTacToeApp.API.Migrations.Init" filename="Migrations\20250709212659_Init.Designer.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="TicTacToeApp.API.Migrations.Init" filename="Migrations\20250713150932_Init.Designer.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="BuildTargetModel" signature="(Microsoft.EntityFrameworkCore.ModelBuilder)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -716,20 +706,6 @@
                 <line number="58" hits="1" branch="False" />
                 <line number="59" hits="2" branch="False" />
                 <line number="61" hits="1" branch="False" />
-                <line number="62" hits="1" branch="False" />
-                <line number="63" hits="1" branch="False" />
-                <line number="64" hits="1" branch="False" />
-                <line number="65" hits="1" branch="False" />
-                <line number="66" hits="1" branch="False" />
-                <line number="67" hits="1" branch="False" />
-                <line number="68" hits="1" branch="False" />
-                <line number="69" hits="1" branch="False" />
-                <line number="70" hits="1" branch="False" />
-                <line number="71" hits="1" branch="False" />
-                <line number="72" hits="1" branch="False" />
-                <line number="73" hits="1" branch="False" />
-                <line number="74" hits="2" branch="False" />
-                <line number="76" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
@@ -772,20 +748,6 @@
             <line number="58" hits="1" branch="False" />
             <line number="59" hits="2" branch="False" />
             <line number="61" hits="1" branch="False" />
-            <line number="62" hits="1" branch="False" />
-            <line number="63" hits="1" branch="False" />
-            <line number="64" hits="1" branch="False" />
-            <line number="65" hits="1" branch="False" />
-            <line number="66" hits="1" branch="False" />
-            <line number="67" hits="1" branch="False" />
-            <line number="68" hits="1" branch="False" />
-            <line number="69" hits="1" branch="False" />
-            <line number="70" hits="1" branch="False" />
-            <line number="71" hits="1" branch="False" />
-            <line number="72" hits="1" branch="False" />
-            <line number="73" hits="1" branch="False" />
-            <line number="74" hits="2" branch="False" />
-            <line number="76" hits="1" branch="False" />
           </lines>
         </class>
         <class name="TicTacToeApp.API.Migrations.TicTacToeContextModelSnapshot" filename="Migrations\TicTacToeContextModelSnapshot.cs" line-rate="1" branch-rate="1" complexity="1">
@@ -830,20 +792,6 @@
                 <line number="55" hits="1" branch="False" />
                 <line number="56" hits="2" branch="False" />
                 <line number="58" hits="1" branch="False" />
-                <line number="59" hits="1" branch="False" />
-                <line number="60" hits="1" branch="False" />
-                <line number="61" hits="1" branch="False" />
-                <line number="62" hits="1" branch="False" />
-                <line number="63" hits="1" branch="False" />
-                <line number="64" hits="1" branch="False" />
-                <line number="65" hits="1" branch="False" />
-                <line number="66" hits="1" branch="False" />
-                <line number="67" hits="1" branch="False" />
-                <line number="68" hits="1" branch="False" />
-                <line number="69" hits="1" branch="False" />
-                <line number="70" hits="1" branch="False" />
-                <line number="71" hits="2" branch="False" />
-                <line number="73" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
@@ -886,45 +834,32 @@
             <line number="55" hits="1" branch="False" />
             <line number="56" hits="2" branch="False" />
             <line number="58" hits="1" branch="False" />
-            <line number="59" hits="1" branch="False" />
-            <line number="60" hits="1" branch="False" />
-            <line number="61" hits="1" branch="False" />
-            <line number="62" hits="1" branch="False" />
-            <line number="63" hits="1" branch="False" />
-            <line number="64" hits="1" branch="False" />
-            <line number="65" hits="1" branch="False" />
-            <line number="66" hits="1" branch="False" />
-            <line number="67" hits="1" branch="False" />
-            <line number="68" hits="1" branch="False" />
-            <line number="69" hits="1" branch="False" />
-            <line number="70" hits="1" branch="False" />
-            <line number="71" hits="2" branch="False" />
-            <line number="73" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="TicTacToeApp.API.Middleware.ExceptionHandlerMiddleware" filename="MIddleware\ExceptionHandlerMiddleware.cs" line-rate="0" branch-rate="0" complexity="23">
+        <class name="TicTacToeApp.API.Middleware.ExceptionHandlerMiddleware" filename="MIddleware\ExceptionHandlerMiddleware.cs" line-rate="0" branch-rate="0" complexity="27">
           <methods>
-            <method name="ConvertExceptionAsync" signature="(Microsoft.AspNetCore.Http.HttpContext,System.Exception)" line-rate="0" branch-rate="0" complexity="22">
+            <method name="ConvertExceptionAsync" signature="(Microsoft.AspNetCore.Http.HttpContext,System.Exception)" line-rate="0" branch-rate="0" complexity="26">
               <lines>
                 <line number="42" hits="0" branch="False" />
                 <line number="43" hits="0" branch="False" />
                 <line number="44" hits="0" branch="False" />
                 <line number="46" hits="0" branch="False" />
                 <line number="47" hits="0" branch="False" />
-                <line number="49" hits="0" branch="True" condition-coverage="0% (0/10)">
+                <line number="49" hits="0" branch="True" condition-coverage="0% (0/12)">
                   <conditions>
                     <condition number="54" type="jump" coverage="0%" />
                     <condition number="67" type="jump" coverage="0%" />
                     <condition number="80" type="jump" coverage="0%" />
                     <condition number="93" type="jump" coverage="0%" />
-                    <condition number="100" type="jump" coverage="0%" />
+                    <condition number="109" type="jump" coverage="0%" />
+                    <condition number="116" type="jump" coverage="0%" />
                   </conditions>
                 </line>
                 <line number="52" hits="0" branch="False" />
                 <line number="53" hits="0" branch="False" />
                 <line number="54" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="134" type="jump" coverage="0%" />
+                    <condition number="150" type="jump" coverage="0%" />
                   </conditions>
                 </line>
                 <line number="55" hits="0" branch="False" />
@@ -932,49 +867,57 @@
                 <line number="58" hits="0" branch="False" />
                 <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="175" type="jump" coverage="0%" />
+                    <condition number="191" type="jump" coverage="0%" />
                   </conditions>
                 </line>
                 <line number="60" hits="0" branch="False" />
-                <line number="62" hits="0" branch="False" />
                 <line number="63" hits="0" branch="False" />
-                <line number="64" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="64" hits="0" branch="False" />
+                <line number="65" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="213" type="jump" coverage="0%" />
+                    <condition number="232" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="65" hits="0" branch="False" />
-                <line number="67" hits="0" branch="False" />
-                <line number="68" hits="0" branch="False" />
-                <line number="69" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="251" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
+                <line number="66" hits="0" branch="False" />
+                <line number="69" hits="0" branch="False" />
                 <line number="70" hits="0" branch="False" />
+                <line number="71" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="270" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
                 <line number="72" hits="0" branch="False" />
-                <line number="73" hits="0" branch="False" />
-                <line number="74" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="289" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
                 <line number="75" hits="0" branch="False" />
-                <line number="78" hits="0" branch="False" />
-                <line number="80" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="76" hits="0" branch="False" />
+                <line number="77" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="327" type="jump" coverage="0%" />
+                    <condition number="308" type="jump" coverage="0%" />
                   </conditions>
                 </line>
+                <line number="78" hits="0" branch="False" />
                 <line number="81" hits="0" branch="False" />
                 <line number="82" hits="0" branch="False" />
+                <line number="83" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="346" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
                 <line number="84" hits="0" branch="False" />
-                <line number="85" hits="0" branch="False" />
-                <line number="86" hits="0" branch="False" />
                 <line number="87" hits="0" branch="False" />
-                <line number="88" hits="0" branch="False" />
-                <line number="89" hits="0" branch="False" />
+                <line number="89" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="384" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
                 <line number="90" hits="0" branch="False" />
+                <line number="91" hits="0" branch="False" />
+                <line number="93" hits="0" branch="False" />
+                <line number="94" hits="0" branch="False" />
+                <line number="95" hits="0" branch="False" />
+                <line number="96" hits="0" branch="False" />
+                <line number="97" hits="0" branch="False" />
+                <line number="98" hits="0" branch="False" />
+                <line number="99" hits="0" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger`1&lt;TicTacToeApp.API.Middleware.ExceptionHandlerMiddleware&gt;,Microsoft.Extensions.Hosting.IHostEnvironment)" line-rate="0" branch-rate="1" complexity="1">
@@ -998,20 +941,21 @@
             <line number="44" hits="0" branch="False" />
             <line number="46" hits="0" branch="False" />
             <line number="47" hits="0" branch="False" />
-            <line number="49" hits="0" branch="True" condition-coverage="0% (0/10)">
+            <line number="49" hits="0" branch="True" condition-coverage="0% (0/12)">
               <conditions>
                 <condition number="54" type="jump" coverage="0%" />
                 <condition number="67" type="jump" coverage="0%" />
                 <condition number="80" type="jump" coverage="0%" />
                 <condition number="93" type="jump" coverage="0%" />
-                <condition number="100" type="jump" coverage="0%" />
+                <condition number="109" type="jump" coverage="0%" />
+                <condition number="116" type="jump" coverage="0%" />
               </conditions>
             </line>
             <line number="52" hits="0" branch="False" />
             <line number="53" hits="0" branch="False" />
             <line number="54" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="134" type="jump" coverage="0%" />
+                <condition number="150" type="jump" coverage="0%" />
               </conditions>
             </line>
             <line number="55" hits="0" branch="False" />
@@ -1019,49 +963,57 @@
             <line number="58" hits="0" branch="False" />
             <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="175" type="jump" coverage="0%" />
+                <condition number="191" type="jump" coverage="0%" />
               </conditions>
             </line>
             <line number="60" hits="0" branch="False" />
-            <line number="62" hits="0" branch="False" />
             <line number="63" hits="0" branch="False" />
-            <line number="64" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="64" hits="0" branch="False" />
+            <line number="65" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="213" type="jump" coverage="0%" />
+                <condition number="232" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="65" hits="0" branch="False" />
-            <line number="67" hits="0" branch="False" />
-            <line number="68" hits="0" branch="False" />
-            <line number="69" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="251" type="jump" coverage="0%" />
-              </conditions>
-            </line>
+            <line number="66" hits="0" branch="False" />
+            <line number="69" hits="0" branch="False" />
             <line number="70" hits="0" branch="False" />
+            <line number="71" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="270" type="jump" coverage="0%" />
+              </conditions>
+            </line>
             <line number="72" hits="0" branch="False" />
-            <line number="73" hits="0" branch="False" />
-            <line number="74" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="289" type="jump" coverage="0%" />
-              </conditions>
-            </line>
             <line number="75" hits="0" branch="False" />
-            <line number="78" hits="0" branch="False" />
-            <line number="80" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="76" hits="0" branch="False" />
+            <line number="77" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="327" type="jump" coverage="0%" />
+                <condition number="308" type="jump" coverage="0%" />
               </conditions>
             </line>
+            <line number="78" hits="0" branch="False" />
             <line number="81" hits="0" branch="False" />
             <line number="82" hits="0" branch="False" />
+            <line number="83" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="346" type="jump" coverage="0%" />
+              </conditions>
+            </line>
             <line number="84" hits="0" branch="False" />
-            <line number="85" hits="0" branch="False" />
-            <line number="86" hits="0" branch="False" />
             <line number="87" hits="0" branch="False" />
-            <line number="88" hits="0" branch="False" />
-            <line number="89" hits="0" branch="False" />
+            <line number="89" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="384" type="jump" coverage="0%" />
+              </conditions>
+            </line>
             <line number="90" hits="0" branch="False" />
+            <line number="91" hits="0" branch="False" />
+            <line number="93" hits="0" branch="False" />
+            <line number="94" hits="0" branch="False" />
+            <line number="95" hits="0" branch="False" />
+            <line number="96" hits="0" branch="False" />
+            <line number="97" hits="0" branch="False" />
+            <line number="98" hits="0" branch="False" />
+            <line number="99" hits="0" branch="False" />
             <line number="15" hits="0" branch="False" />
             <line number="16" hits="0" branch="False" />
             <line number="17" hits="0" branch="False" />
@@ -1104,11 +1056,124 @@
             <line number="39" hits="0" branch="False" />
           </lines>
         </class>
+        <class name="TicTacToeApp.API.Filters.ErrorResponseSchemaFilter" filename="Filters\ErrorResponseFilter.cs" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="Apply" signature="(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="24" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="24" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="TicTacToeApp.API.Filters.ErrorResponseOperationFilter" filename="Filters\ErrorResponseFilter.cs" line-rate="0" branch-rate="0" complexity="6">
+          <methods>
+            <method name="Apply" signature="(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="323" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="40" hits="0" branch="False" />
+                <line number="41" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="210" type="jump" coverage="0%" />
+                    <condition number="238" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+                <line number="49" hits="0" branch="False" />
+                <line number="50" hits="0" branch="False" />
+                <line number="51" hits="0" branch="False" />
+                <line number="52" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="39" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="323" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="40" hits="0" branch="False" />
+            <line number="41" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="210" type="jump" coverage="0%" />
+                <condition number="238" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="49" hits="0" branch="False" />
+            <line number="50" hits="0" branch="False" />
+            <line number="51" hits="0" branch="False" />
+            <line number="52" hits="0" branch="False" />
+          </lines>
+        </class>
         <class name="TicTacToeApp.API.Extensions.SwaggerServices" filename="Extensions\SwaggerServices.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="AddSwaggerServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="10" hits="0" branch="False" />
                 <line number="11" hits="0" branch="False" />
                 <line number="12" hits="0" branch="False" />
                 <line number="13" hits="0" branch="False" />
@@ -1128,13 +1193,15 @@
                 <line number="27" hits="0" branch="False" />
                 <line number="28" hits="0" branch="False" />
                 <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
                 <line number="31" hits="0" branch="False" />
                 <line number="32" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="10" hits="0" branch="False" />
             <line number="11" hits="0" branch="False" />
             <line number="12" hits="0" branch="False" />
             <line number="13" hits="0" branch="False" />
@@ -1154,8 +1221,11 @@
             <line number="27" hits="0" branch="False" />
             <line number="28" hits="0" branch="False" />
             <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
             <line number="31" hits="0" branch="False" />
             <line number="32" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
           </lines>
         </class>
         <class name="TicTacToeApp.API.Exceptions.NotFoundException" filename="Exceptions\NotFoundException.cs" line-rate="0" branch-rate="1" complexity="4">
@@ -1188,80 +1258,17 @@
             <line number="11" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="TicTacToeApp.API.Entity.Game" filename="Entity\Game.cs" line-rate="1" branch-rate="1" complexity="7">
-          <methods>
-            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="7" hits="10" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Status" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="8" hits="10" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Board" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="10" hits="15" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Result" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="19" hits="10" branch="False" />
-              </lines>
-            </method>
-            <method name="get_CreatedAt" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="20" hits="10" branch="False" />
-              </lines>
-            </method>
-            <method name="get_CurrentMove" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="21" hits="10" branch="False" />
-              </lines>
-            </method>
-            <method name="get_CurrentStep" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="22" hits="10" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="7" hits="10" branch="False" />
-            <line number="8" hits="10" branch="False" />
-            <line number="10" hits="15" branch="False" />
-            <line number="19" hits="10" branch="False" />
-            <line number="20" hits="10" branch="False" />
-            <line number="21" hits="10" branch="False" />
-            <line number="22" hits="10" branch="False" />
-          </lines>
-        </class>
-        <class name="TicTacToeApp.API.Entity.Move" filename="Entity\Move.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="get_p" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="6" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="6" hits="0" branch="False" />
-          </lines>
-        </class>
         <class name="TicTacToeApp.API.Endpoints.GameEndpoints" filename="Endpoints\UseGameEndpoints.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
-            <method name="UseGameEndpoints" signature="(Microsoft.AspNetCore.Builder.WebApplication,System.Threading.CancellationToken)" line-rate="0" branch-rate="1" complexity="1">
+            <method name="UseGameEndpoints" signature="(Microsoft.AspNetCore.Builder.WebApplication)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="0" branch="False" />
-                <line number="16" hits="0" branch="False" />
                 <line number="18" hits="0" branch="False" />
-                <line number="20" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
                 <line number="21" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
                 <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
                 <line number="25" hits="0" branch="False" />
                 <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
                 <line number="28" hits="0" branch="False" />
                 <line number="29" hits="0" branch="False" />
                 <line number="30" hits="0" branch="False" />
@@ -1273,11 +1280,11 @@
                 <line number="36" hits="0" branch="False" />
                 <line number="37" hits="0" branch="False" />
                 <line number="38" hits="0" branch="False" />
-                <line number="39" hits="0" branch="False" />
                 <line number="40" hits="0" branch="False" />
                 <line number="41" hits="0" branch="False" />
                 <line number="42" hits="0" branch="False" />
                 <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
                 <line number="45" hits="0" branch="False" />
                 <line number="46" hits="0" branch="False" />
                 <line number="47" hits="0" branch="False" />
@@ -1287,7 +1294,6 @@
                 <line number="51" hits="0" branch="False" />
                 <line number="52" hits="0" branch="False" />
                 <line number="53" hits="0" branch="False" />
-                <line number="54" hits="0" branch="False" />
                 <line number="55" hits="0" branch="False" />
                 <line number="56" hits="0" branch="False" />
                 <line number="57" hits="0" branch="False" />
@@ -1325,7 +1331,6 @@
                 <line number="89" hits="0" branch="False" />
                 <line number="90" hits="0" branch="False" />
                 <line number="91" hits="0" branch="False" />
-                <line number="92" hits="0" branch="False" />
                 <line number="93" hits="0" branch="False" />
                 <line number="94" hits="0" branch="False" />
                 <line number="95" hits="0" branch="False" />
@@ -1381,22 +1386,87 @@
                 <line number="145" hits="0" branch="False" />
                 <line number="146" hits="0" branch="False" />
                 <line number="147" hits="0" branch="False" />
+                <line number="148" hits="0" branch="False" />
                 <line number="149" hits="0" branch="False" />
                 <line number="150" hits="0" branch="False" />
+                <line number="151" hits="0" branch="False" />
+                <line number="152" hits="0" branch="False" />
+                <line number="153" hits="0" branch="False" />
+                <line number="154" hits="0" branch="False" />
+                <line number="155" hits="0" branch="False" />
+                <line number="156" hits="0" branch="False" />
+                <line number="157" hits="0" branch="False" />
+                <line number="158" hits="0" branch="False" />
+                <line number="159" hits="0" branch="False" />
+                <line number="160" hits="0" branch="False" />
+                <line number="161" hits="0" branch="False" />
+                <line number="162" hits="0" branch="False" />
+                <line number="163" hits="0" branch="False" />
+                <line number="164" hits="0" branch="False" />
+                <line number="165" hits="0" branch="False" />
+                <line number="166" hits="0" branch="False" />
+                <line number="167" hits="0" branch="False" />
+                <line number="168" hits="0" branch="False" />
+                <line number="169" hits="0" branch="False" />
+                <line number="170" hits="0" branch="False" />
+                <line number="171" hits="0" branch="False" />
+                <line number="172" hits="0" branch="False" />
+                <line number="173" hits="0" branch="False" />
+                <line number="174" hits="0" branch="False" />
+                <line number="175" hits="0" branch="False" />
+                <line number="176" hits="0" branch="False" />
+                <line number="177" hits="0" branch="False" />
+                <line number="178" hits="0" branch="False" />
+                <line number="179" hits="0" branch="False" />
+                <line number="180" hits="0" branch="False" />
+                <line number="181" hits="0" branch="False" />
+                <line number="182" hits="0" branch="False" />
+                <line number="183" hits="0" branch="False" />
+                <line number="184" hits="0" branch="False" />
+                <line number="185" hits="0" branch="False" />
+                <line number="186" hits="0" branch="False" />
+                <line number="187" hits="0" branch="False" />
+                <line number="188" hits="0" branch="False" />
+                <line number="189" hits="0" branch="False" />
+                <line number="190" hits="0" branch="False" />
+                <line number="191" hits="0" branch="False" />
+                <line number="192" hits="0" branch="False" />
+                <line number="193" hits="0" branch="False" />
+                <line number="194" hits="0" branch="False" />
+                <line number="195" hits="0" branch="False" />
+                <line number="196" hits="0" branch="False" />
+                <line number="197" hits="0" branch="False" />
+                <line number="198" hits="0" branch="False" />
+                <line number="199" hits="0" branch="False" />
+                <line number="200" hits="0" branch="False" />
+                <line number="201" hits="0" branch="False" />
+                <line number="202" hits="0" branch="False" />
+                <line number="203" hits="0" branch="False" />
+                <line number="204" hits="0" branch="False" />
+                <line number="205" hits="0" branch="False" />
+                <line number="206" hits="0" branch="False" />
+                <line number="207" hits="0" branch="False" />
+                <line number="208" hits="0" branch="False" />
+                <line number="209" hits="0" branch="False" />
+                <line number="210" hits="0" branch="False" />
+                <line number="211" hits="0" branch="False" />
+                <line number="212" hits="0" branch="False" />
+                <line number="213" hits="0" branch="False" />
+                <line number="214" hits="0" branch="False" />
+                <line number="215" hits="0" branch="False" />
+                <line number="217" hits="0" branch="False" />
+                <line number="218" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="15" hits="0" branch="False" />
-            <line number="16" hits="0" branch="False" />
             <line number="18" hits="0" branch="False" />
-            <line number="20" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
             <line number="21" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
             <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
             <line number="25" hits="0" branch="False" />
             <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
             <line number="28" hits="0" branch="False" />
             <line number="29" hits="0" branch="False" />
             <line number="30" hits="0" branch="False" />
@@ -1408,11 +1478,11 @@
             <line number="36" hits="0" branch="False" />
             <line number="37" hits="0" branch="False" />
             <line number="38" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
             <line number="40" hits="0" branch="False" />
             <line number="41" hits="0" branch="False" />
             <line number="42" hits="0" branch="False" />
             <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
             <line number="45" hits="0" branch="False" />
             <line number="46" hits="0" branch="False" />
             <line number="47" hits="0" branch="False" />
@@ -1422,7 +1492,6 @@
             <line number="51" hits="0" branch="False" />
             <line number="52" hits="0" branch="False" />
             <line number="53" hits="0" branch="False" />
-            <line number="54" hits="0" branch="False" />
             <line number="55" hits="0" branch="False" />
             <line number="56" hits="0" branch="False" />
             <line number="57" hits="0" branch="False" />
@@ -1460,7 +1529,6 @@
             <line number="89" hits="0" branch="False" />
             <line number="90" hits="0" branch="False" />
             <line number="91" hits="0" branch="False" />
-            <line number="92" hits="0" branch="False" />
             <line number="93" hits="0" branch="False" />
             <line number="94" hits="0" branch="False" />
             <line number="95" hits="0" branch="False" />
@@ -1516,38 +1584,192 @@
             <line number="145" hits="0" branch="False" />
             <line number="146" hits="0" branch="False" />
             <line number="147" hits="0" branch="False" />
+            <line number="148" hits="0" branch="False" />
             <line number="149" hits="0" branch="False" />
             <line number="150" hits="0" branch="False" />
+            <line number="151" hits="0" branch="False" />
+            <line number="152" hits="0" branch="False" />
+            <line number="153" hits="0" branch="False" />
+            <line number="154" hits="0" branch="False" />
+            <line number="155" hits="0" branch="False" />
+            <line number="156" hits="0" branch="False" />
+            <line number="157" hits="0" branch="False" />
+            <line number="158" hits="0" branch="False" />
+            <line number="159" hits="0" branch="False" />
+            <line number="160" hits="0" branch="False" />
+            <line number="161" hits="0" branch="False" />
+            <line number="162" hits="0" branch="False" />
+            <line number="163" hits="0" branch="False" />
+            <line number="164" hits="0" branch="False" />
+            <line number="165" hits="0" branch="False" />
+            <line number="166" hits="0" branch="False" />
+            <line number="167" hits="0" branch="False" />
+            <line number="168" hits="0" branch="False" />
+            <line number="169" hits="0" branch="False" />
+            <line number="170" hits="0" branch="False" />
+            <line number="171" hits="0" branch="False" />
+            <line number="172" hits="0" branch="False" />
+            <line number="173" hits="0" branch="False" />
+            <line number="174" hits="0" branch="False" />
+            <line number="175" hits="0" branch="False" />
+            <line number="176" hits="0" branch="False" />
+            <line number="177" hits="0" branch="False" />
+            <line number="178" hits="0" branch="False" />
+            <line number="179" hits="0" branch="False" />
+            <line number="180" hits="0" branch="False" />
+            <line number="181" hits="0" branch="False" />
+            <line number="182" hits="0" branch="False" />
+            <line number="183" hits="0" branch="False" />
+            <line number="184" hits="0" branch="False" />
+            <line number="185" hits="0" branch="False" />
+            <line number="186" hits="0" branch="False" />
+            <line number="187" hits="0" branch="False" />
+            <line number="188" hits="0" branch="False" />
+            <line number="189" hits="0" branch="False" />
+            <line number="190" hits="0" branch="False" />
+            <line number="191" hits="0" branch="False" />
+            <line number="192" hits="0" branch="False" />
+            <line number="193" hits="0" branch="False" />
+            <line number="194" hits="0" branch="False" />
+            <line number="195" hits="0" branch="False" />
+            <line number="196" hits="0" branch="False" />
+            <line number="197" hits="0" branch="False" />
+            <line number="198" hits="0" branch="False" />
+            <line number="199" hits="0" branch="False" />
+            <line number="200" hits="0" branch="False" />
+            <line number="201" hits="0" branch="False" />
+            <line number="202" hits="0" branch="False" />
+            <line number="203" hits="0" branch="False" />
+            <line number="204" hits="0" branch="False" />
+            <line number="205" hits="0" branch="False" />
+            <line number="206" hits="0" branch="False" />
+            <line number="207" hits="0" branch="False" />
+            <line number="208" hits="0" branch="False" />
+            <line number="209" hits="0" branch="False" />
+            <line number="210" hits="0" branch="False" />
+            <line number="211" hits="0" branch="False" />
+            <line number="212" hits="0" branch="False" />
+            <line number="213" hits="0" branch="False" />
+            <line number="214" hits="0" branch="False" />
+            <line number="215" hits="0" branch="False" />
+            <line number="217" hits="0" branch="False" />
+            <line number="218" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="TicTacToeApp.API.Endpoints.GameEndpoints/&lt;&gt;c__DisplayClass0_0/&lt;&lt;UseGameEndpoints&gt;b__2&gt;d" filename="Endpoints\UseGameEndpoints.cs" line-rate="1" branch-rate="0" complexity="2">
+        <class name="TicTacToeApp.API.Endpoints.GameEndpoints/&lt;&gt;c__DisplayClass0_0/&lt;&lt;UseGameEndpoints&gt;b__3&gt;d" filename="Endpoints\UseGameEndpoints.cs" line-rate="1" branch-rate="0" complexity="10">
           <methods />
           <lines />
         </class>
-        <class name="TicTacToeApp.API.Endpoints.GameEndpoints/&lt;&gt;c__DisplayClass0_0/&lt;&lt;UseGameEndpoints&gt;b__3&gt;d" filename="Endpoints\UseGameEndpoints.cs" line-rate="1" branch-rate="0" complexity="30">
+        <class name="TicTacToeApp.API.Endpoints.GameEndpoints/&lt;&gt;c__DisplayClass0_0/&lt;&lt;UseGameEndpoints&gt;b__4&gt;d" filename="Endpoints\UseGameEndpoints.cs" line-rate="1" branch-rate="0" complexity="30">
           <methods />
           <lines />
         </class>
-        <class name="TicTacToeApp.API.Data.TicTacToeContext" filename="Data\TicTacToeContext.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="TicTacToeApp.API.Entity.Move" filename="Dtos\Move.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_p" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="TicTacToeApp.API.Entity.Game" filename="Entity\Game.cs" line-rate="1" branch-rate="1" complexity="7">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Status" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Board" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="15" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Result" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CreatedAt" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CurrentMove" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CurrentStep" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="10" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="10" branch="False" />
+            <line number="8" hits="10" branch="False" />
+            <line number="9" hits="15" branch="False" />
+            <line number="10" hits="10" branch="False" />
+            <line number="11" hits="10" branch="False" />
+            <line number="12" hits="10" branch="False" />
+            <line number="13" hits="10" branch="False" />
+          </lines>
+        </class>
+        <class name="TicTacToeApp.API.Dtos.GameOption" filename="Dtos\GameOption.cs" line-rate="0" branch-rate="1" complexity="5">
+          <methods>
+            <method name="get_size" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="4" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_line_to_win" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_chance" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_step" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Int32,System.Int32,System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="3" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+            <line number="6" hits="0" branch="False" />
+            <line number="7" hits="0" branch="False" />
+            <line number="3" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="TicTacToeApp.API.Data.TicTacToeContext" filename="Data\TicTacToeContext.cs" line-rate="1" branch-rate="1" complexity="3">
           <methods>
             <method name="get_Games" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="15" hits="7" branch="False" />
               </lines>
             </method>
-            <method name="get_Moves" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="16" hits="1" branch="False" />
-              </lines>
-            </method>
             <method name="OnModelCreating" signature="(Microsoft.EntityFrameworkCore.ModelBuilder)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="19" hits="1" branch="False" />
-                <line number="20" hits="1" branch="False" />
-                <line number="21" hits="1" branch="False" />
-                <line number="22" hits="1" branch="False" />
-                <line number="23" hits="1" branch="False" />
-                <line number="24" hits="1" branch="False" />
                 <line number="25" hits="1" branch="False" />
                 <line number="26" hits="1" branch="False" />
                 <line number="27" hits="1" branch="False" />
@@ -1561,12 +1783,12 @@
                 <line number="35" hits="1" branch="False" />
                 <line number="36" hits="1" branch="False" />
                 <line number="37" hits="1" branch="False" />
-                <line number="38" hits="2" branch="False" />
+                <line number="38" hits="1" branch="False" />
+                <line number="39" hits="1" branch="False" />
                 <line number="40" hits="1" branch="False" />
                 <line number="41" hits="1" branch="False" />
                 <line number="42" hits="1" branch="False" />
-                <line number="43" hits="1" branch="False" />
-                <line number="44" hits="2" branch="False" />
+                <line number="43" hits="2" branch="False" />
                 <line number="45" hits="1" branch="False" />
               </lines>
             </method>
@@ -1581,13 +1803,7 @@
           </methods>
           <lines>
             <line number="15" hits="7" branch="False" />
-            <line number="16" hits="1" branch="False" />
             <line number="19" hits="1" branch="False" />
-            <line number="20" hits="1" branch="False" />
-            <line number="21" hits="1" branch="False" />
-            <line number="22" hits="1" branch="False" />
-            <line number="23" hits="1" branch="False" />
-            <line number="24" hits="1" branch="False" />
             <line number="25" hits="1" branch="False" />
             <line number="26" hits="1" branch="False" />
             <line number="27" hits="1" branch="False" />
@@ -1601,12 +1817,12 @@
             <line number="35" hits="1" branch="False" />
             <line number="36" hits="1" branch="False" />
             <line number="37" hits="1" branch="False" />
-            <line number="38" hits="2" branch="False" />
+            <line number="38" hits="1" branch="False" />
+            <line number="39" hits="1" branch="False" />
             <line number="40" hits="1" branch="False" />
             <line number="41" hits="1" branch="False" />
             <line number="42" hits="1" branch="False" />
-            <line number="43" hits="1" branch="False" />
-            <line number="44" hits="2" branch="False" />
+            <line number="43" hits="2" branch="False" />
             <line number="45" hits="1" branch="False" />
             <line number="10" hits="1" branch="False" />
             <line number="11" hits="1" branch="False" />

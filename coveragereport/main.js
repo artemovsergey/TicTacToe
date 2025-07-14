@@ -213,20 +213,23 @@ var assemblies = [
   {
     "name": "TicTacToeApp.API",
     "classes": [
-      { "name": "Program", "rp": "TicTacToeApp.API_Program.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 46, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Data.TicTacToeContext", "rp": "TicTacToeApp.API_TicTacToeContext.html", "cl": 32, "ucl": 0, "cal": 32, "tl": 46, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Endpoints.GameEndpoints", "rp": "TicTacToeApp.API_GameEndpoints.html", "cl": 0, "ucl": 131, "cal": 131, "tl": 151, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Entity.Game", "rp": "TicTacToeApp.API_Game.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 23, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Program", "rp": "TicTacToeApp.API_Program.html", "cl": 0, "ucl": 27, "cal": 27, "tl": 43, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Data.TicTacToeContext", "rp": "TicTacToeApp.API_TicTacToeContext.html", "cl": 26, "ucl": 0, "cal": 26, "tl": 46, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Dtos.GameOption", "rp": "TicTacToeApp.API_GameOption.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 7, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Endpoints.GameEndpoints", "rp": "TicTacToeApp.API_GameEndpoints.html", "cl": 0, "ucl": 194, "cal": 194, "tl": 219, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Entity.Game", "rp": "TicTacToeApp.API_Game.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TicTacToeApp.API.Entity.Move", "rp": "TicTacToeApp.API_Move.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 6, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TicTacToeApp.API.Exceptions.NotFoundException", "rp": "TicTacToeApp.API_NotFoundException.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 12, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Extensions.SwaggerServices", "rp": "TicTacToeApp.API_SwaggerServices.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 33, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Middleware.ExceptionHandlerMiddleware", "rp": "TicTacToeApp.API_ExceptionHandlerMiddleware.html", "cl": 0, "ucl": 57, "cal": 57, "tl": 91, "cb": 0, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Migrations.Init", "rp": "TicTacToeApp.API_Init.html", "cl": 81, "ucl": 6, "cal": 87, "tl": 132, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Migrations.TicTacToeContextModelSnapshot", "rp": "TicTacToeApp.API_TicTacToeContextModelSnapshot.html", "cl": 52, "ucl": 0, "cal": 52, "tl": 75, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Repositories.GameAsyncRepository", "rp": "TicTacToeApp.API_GameAsyncRepository.html", "cl": 16, "ucl": 19, "cal": 35, "tl": 55, "cb": 4, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Response.ErrorResponse", "rp": "TicTacToeApp.API_ErrorResponse.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 15, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Services.EtagService", "rp": "TicTacToeApp.API_EtagService.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TicTacToeApp.API.Services.GameService", "rp": "TicTacToeApp.API_GameService.html", "cl": 0, "ucl": 58, "cal": 58, "tl": 98, "cb": 0, "tb": 84, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Extensions.SwaggerServices", "rp": "TicTacToeApp.API_SwaggerServices.html", "cl": 0, "ucl": 24, "cal": 24, "tl": 36, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Filters.ErrorResponseOperationFilter", "rp": "TicTacToeApp.API_ErrorResponseOperationFilter.html", "cl": 0, "ucl": 23, "cal": 23, "tl": 53, "cb": 0, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Filters.ErrorResponseSchemaFilter", "rp": "TicTacToeApp.API_ErrorResponseSchemaFilter.html", "cl": 0, "ucl": 11, "cal": 11, "tl": 53, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Middleware.ExceptionHandlerMiddleware", "rp": "TicTacToeApp.API_ExceptionHandlerMiddleware.html", "cl": 0, "ucl": 61, "cal": 61, "tl": 100, "cb": 0, "tb": 26, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Migrations.Init", "rp": "TicTacToeApp.API_Init.html", "cl": 56, "ucl": 4, "cal": 60, "tl": 102, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Migrations.TicTacToeContextModelSnapshot", "rp": "TicTacToeApp.API_TicTacToeContextModelSnapshot.html", "cl": 38, "ucl": 0, "cal": 38, "tl": 60, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Repositories.GameAsyncRepository", "rp": "TicTacToeApp.API_GameAsyncRepository.html", "cl": 5, "ucl": 21, "cal": 26, "tl": 47, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Response.ErrorResponse", "rp": "TicTacToeApp.API_ErrorResponse.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Services.EtagService", "rp": "TicTacToeApp.API_EtagService.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 16, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TicTacToeApp.API.Services.GameService", "rp": "TicTacToeApp.API_GameService.html", "cl": 12, "ucl": 58, "cal": 70, "tl": 115, "cb": 4, "tb": 88, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
@@ -241,7 +244,7 @@ var riskHotspotMetrics = [
 
 var riskHotspots = [
   {
-    "assembly": "TicTacToeApp.API", "class": "TicTacToeApp.API.Services.GameService", "reportPath": "TicTacToeApp.API_GameService.html", "methodName": "CheckBoard(System.String[][],System.String)", "methodShortName": "CheckBoard(...)", "fileIndex": 0, "line": 8,
+    "assembly": "TicTacToeApp.API", "class": "TicTacToeApp.API.Services.GameService", "reportPath": "TicTacToeApp.API_GameService.html", "methodName": "CheckBoard(System.String[][],System.String)", "methodShortName": "CheckBoard(...)", "fileIndex": 0, "line": 9,
     "metrics": [
       { "value": 2970, "exceeded": true },
       { "value": 54, "exceeded": true },
@@ -249,20 +252,26 @@ var riskHotspots = [
   {
     "assembly": "TicTacToeApp.API", "class": "TicTacToeApp.API.Middleware.ExceptionHandlerMiddleware", "reportPath": "TicTacToeApp.API_ExceptionHandlerMiddleware.html", "methodName": "ConvertExceptionAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception)", "methodShortName": "ConvertExceptionAsync(...)", "fileIndex": 0, "line": 42,
     "metrics": [
-      { "value": 506, "exceeded": true },
-      { "value": 22, "exceeded": true },
+      { "value": 702, "exceeded": true },
+      { "value": 26, "exceeded": true },
     ]},
   {
-    "assembly": "TicTacToeApp.API", "class": "TicTacToeApp.API.Services.GameService", "reportPath": "TicTacToeApp.API_GameService.html", "methodName": "CheckBoardN(System.String[][],System.String,System.Int32)", "methodShortName": "CheckBoardN(...)", "fileIndex": 0, "line": 34,
+    "assembly": "TicTacToeApp.API", "class": "TicTacToeApp.API.Services.GameService", "reportPath": "TicTacToeApp.API_GameService.html", "methodName": "CheckBoardN(System.String[][],System.String,System.Int32)", "methodShortName": "CheckBoardN(...)", "fileIndex": 0, "line": 35,
     "metrics": [
       { "value": 272, "exceeded": true },
       { "value": 16, "exceeded": true },
     ]},
   {
-    "assembly": "TicTacToeApp.API", "class": "TicTacToeApp.API.Services.GameService", "reportPath": "TicTacToeApp.API_GameService.html", "methodName": "CheckLine(System.String[][],System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Int32)", "methodShortName": "CheckLine(...)", "fileIndex": 0, "line": 71,
+    "assembly": "TicTacToeApp.API", "class": "TicTacToeApp.API.Services.GameService", "reportPath": "TicTacToeApp.API_GameService.html", "methodName": "CheckLine(System.String[][],System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Int32)", "methodShortName": "CheckLine(...)", "fileIndex": 0, "line": 72,
     "metrics": [
       { "value": 156, "exceeded": true },
       { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "TicTacToeApp.API", "class": "TicTacToeApp.API.Filters.ErrorResponseOperationFilter", "reportPath": "TicTacToeApp.API_ErrorResponseOperationFilter.html", "methodName": "Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)", "methodShortName": "Apply(...)", "fileIndex": 0, "line": 29,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
     ]},
 ];
 

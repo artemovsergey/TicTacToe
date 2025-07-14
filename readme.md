@@ -31,7 +31,7 @@ class Games {
  - конфигурация приложения выполняется через переменные окружения
  - unit и интеграционные тесты работают локально по команде `dotnet test`
  - интеграционные тесты используют технологию `TestContainters`, для чего нужен Docker 
- - покрытие API тестами > 30%
+ - метрики покрытия API тестами
 
 [![tests](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml/badge.svg?branch=master&event=push)](https://github.com/artemovsergey/TicTacToe/actions/workflows/dotnet-test.yaml)
  - настроен ci/cd pipeline на github action на запуск тестов:
@@ -48,6 +48,15 @@ class Games {
  - предусмотрена валидация на входные данные
  - состояние игры храниться базе, что способствует восстановлению процесса игры
  - реализована проверка состояния игры на идемпотентность с помощью `ETag` в заголовках ответов
+
+# Покрытие тестами
+
+- установить инструмент `dotnet tool install -g dotnet-reportgenerator-globaltool`
+- установить `coverlet.msbuild` в проект xUnit
+- `dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura`
+- перейти в тестовый проект и создать отчет: `reportgenerator -reports:"coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html`
+- отчет находится в папке `coveragerepost` в виде index.html
+
 
  # Новое
 
