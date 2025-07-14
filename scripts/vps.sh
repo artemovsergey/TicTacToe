@@ -1,6 +1,6 @@
 ﻿#!/bin/bash
 echo "Go to project"
-cd /home/user1/tictactoeapp/
+cd /home/user1/tictactoe/
 
 echo "Stop all containers"
 docker-compose down
