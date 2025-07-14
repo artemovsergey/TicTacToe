@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            rm -rf /home/user1/tictactoeapp
+            rm -rf /home/user1/tictactoe
 
       - name: Сlone new repo
         uses: appleboy/ssh-action@master
