@@ -20,7 +20,7 @@ public static class SwaggerServices
                     Description = "API для пользователей",
                     Contact = new OpenApiContact
                     {
-                        Url = new Uri("https://github.com/artemovsergey/TicTacToeApp"),
+                        Url = new Uri("https://github.com/artemovsergey/TicTacToe"),
                         Email = "artik3314@gmail.com",
                     }
                 }
