@@ -57,7 +57,7 @@ class Games {
 - установить `coverlet.msbuild` в проект xUnit
 - `dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura`
 - перейти в тестовый проект и создать отчет: `reportgenerator -reports:"coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html`
-- отчет находится в папке `coveragerepost` в виде index.html
+- отчет находится в папке `coveragerepost` в виде index.html, а также развернут https://artemovsergey.github.io/TicTacToe/
 
  # Новое
 
