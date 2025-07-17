@@ -38,8 +38,8 @@ class Games {
 
  - осуществлено развертывание на VPS:
 
-[![deploy](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/deploy.yml/badge.svg)](https://github.com/artemovsergey/TicTacToe/actions/workflows/deploy.yml)
- 
+   [![deploy](https://github.com/artemovsergey/TicTacToe/actions/workflows/deploy.yml/badge.svg)](https://github.com/artemovsergey/TicTacToe/actions/workflows/deploy.yml)
+   
  - глобальная обработка ошибок через `middleware` и стандартизированная модель ответа для исключений 
  - асинхронная работа с данными с использованием токена отмены
  - взаимодействие с базой данных `Postgres` осуществляется через `EntityFrameWorkCore` посредством механизма миграций.
