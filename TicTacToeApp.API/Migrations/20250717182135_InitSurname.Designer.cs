@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TicTacToeApp.API.Data;
@@ -11,9 +12,11 @@ using TicTacToeApp.API.Data;
 namespace TicTacToeApp.API.Migrations
 {
     [DbContext(typeof(TicTacToeContext))]
-    partial class TicTacToeContextModelSnapshot : ModelSnapshot
+    [Migration("20250717182135_InitSurname")]
+    partial class InitSurname
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

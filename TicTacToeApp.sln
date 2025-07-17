@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeApp.API", "TicTacT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeApp.Tests", "TicTacToeApp.Tests\TicTacToeApp.Tests.csproj", "{C020D18C-5EB3-4B2A-A338-231B98A76A09}"
 EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +25,9 @@ Global
 		{C020D18C-5EB3-4B2A-A338-231B98A76A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C020D18C-5EB3-4B2A-A338-231B98A76A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C020D18C-5EB3-4B2A-A338-231B98A76A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236C8F2F-47EA-46A0-BDBB-93F1B157F7AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236C8F2F-47EA-46A0-BDBB-93F1B157F7AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236C8F2F-47EA-46A0-BDBB-93F1B157F7AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236C8F2F-47EA-46A0-BDBB-93F1B157F7AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

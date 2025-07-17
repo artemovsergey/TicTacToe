@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TicTacToeApp.API.Data;
@@ -11,9 +12,11 @@ using TicTacToeApp.API.Data;
 namespace TicTacToeApp.API.Migrations
 {
     [DbContext(typeof(TicTacToeContext))]
-    partial class TicTacToeContextModelSnapshot : ModelSnapshot
+    [Migration("20250717180925_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,10 +56,6 @@ namespace TicTacToeApp.API.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.ToTable("Games", (string)null);
@@ -71,8 +70,7 @@ namespace TicTacToeApp.API.Migrations
                             CurrentMove = "X",
                             CurrentStep = 0L,
                             Result = "None",
-                            Status = "Active",
-                            Surname = ""
+                            Status = "Active"
                         });
                 });
 #pragma warning restore 612, 618
