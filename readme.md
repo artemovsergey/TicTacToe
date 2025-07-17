@@ -49,7 +49,9 @@ class Games {
  - состояние игры храниться базе, что способствует восстановлению процесса игры
  - реализована проверка состояния игры на идемпотентность с помощью `ETag` в заголовках ответов
 
-# Покрытие тестами
+# Покрытие тестами 
+
+[![pages-build-deployment](https://github.com/artemovsergey/TicTacToe/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/artemovsergey/TicTacToe/actions/workflows/pages/pages-build-deployment)
 
 - установить инструмент `dotnet tool install -g dotnet-reportgenerator-globaltool`
 - установить `coverlet.msbuild` в проект xUnit
