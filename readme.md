@@ -33,7 +33,7 @@ class Games {
  - интеграционные тесты используют технологию `TestContainters`, для чего нужен Docker 
  - метрики покрытия API тестами на github pages
 
-[![tests](https://github.com/artemovsergey/TicTacToeApp/actions/workflows/dotnet-test.yaml/badge.svg?branch=master&event=push)](https://github.com/artemovsergey/TicTacToe/actions/workflows/dotnet-test.yaml)
+[![unit and integration Tests](https://github.com/artemovsergey/TicTacToe/actions/workflows/dotnet-test.yaml/badge.svg)](https://github.com/artemovsergey/TicTacToe/actions/workflows/dotnet-test.yaml)
  - настроен ci/cd pipeline на github action на запуск тестов:
 
  - осуществлено развертывание на VPS:
