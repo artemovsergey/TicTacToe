@@ -204,6 +204,7 @@ public static class GameEndpoints
                 })
             .WithOpenApi(operation =>
             {
+                operation.Tags = "TicTacToe.API",
                 operation.Summary = "Ход игрока X или O";
                 operation.Description = "Возвращает состояние игры в виде объекта Game";
                 return operation;
