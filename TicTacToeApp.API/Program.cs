@@ -34,7 +34,7 @@ app.UseSwaggerUI(c =>
 app.MapOpenApi();
 
 app.MapGet("/health", () => Results.Ok("Проверка работы"))
-    .WithTags("TicTacToeApp")
+    .WithTags("TicTacToe.API")
     .WithName("CheckHealth")
     .WithSummary("Проверка здоровья приложения");
 

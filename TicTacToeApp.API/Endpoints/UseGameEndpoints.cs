@@ -42,6 +42,7 @@ public static class GameEndpoints
                 {
                     return Results.Ok(await repo.FindGameByGuidAsync(Id, ct));
                 })
+            .WithTags("TicTacToe.API")
             .WithName("GetGameById")
             .WithOpenApi(operation =>
             {
