@@ -30,7 +30,7 @@ public static class GameEndpoints
                 {
                     return Results.Ok(await repo.GetGamesAsync(ct));
                 })
-            .WithTags("TicTacToeApp.API")
+            .WithTags("TicTacToe.API")
             .WithName("GetAllGames")
             .WithSummary("Список доступных игр")
             .WithDescription("Возвращает список объектов Game")
@@ -83,7 +83,7 @@ public static class GameEndpoints
 
                 return Results.CreatedAtRoute("GetGameById", game, value: game);
             })
-            .WithTags("TicTacToeApp.API")
+            .WithTags("TicTacToe.API")
             .WithName("CreateGame")
             .WithSummary("Создание новой игры")
             .WithDescription("Возвращает объект игры Game")
