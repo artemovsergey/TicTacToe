@@ -213,7 +213,8 @@ var assemblies = [
   {
     "name": "TicTacToeApp.API",
     "classes": [
-      { "name": "Program", "rp": "TicTacToeApp.API_Program.html", "cl": 0, "ucl": 27, "cal": 27, "tl": 43, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "GameSettings", "rp": "TicTacToeApp.API_GameSettings.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 64, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Program", "rp": "TicTacToeApp.API_Program.html", "cl": 0, "ucl": 37, "cal": 37, "tl": 64, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TicTacToeApp.API.Data.Configuration.GameMapping", "rp": "TicTacToeApp.API_GameMapping.html", "cl": 33, "ucl": 0, "cal": 33, "tl": 58, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TicTacToeApp.API.Data.Configuration.UserMapping", "rp": "TicTacToeApp.API_UserMapping.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 42, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TicTacToeApp.API.Data.Converters.DateTimeToCharConverter", "rp": "TicTacToeApp.API_DateTimeToCharConverter.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
