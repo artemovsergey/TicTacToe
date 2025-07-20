@@ -190,7 +190,7 @@ public static class GameEndpoints
 
                     var response = new
                     {
-                        GameId = gameId,
+                        Id = gameId,
                         Board = game.Board,
                         Status = game.Status,
                         Result = game.Result,

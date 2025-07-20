@@ -1,0 +1,35 @@
+<div class="game-container">
+
+
+  @if(this.gameService.currentGame()){
+    <div style="display: flex; gap: 3rem;">
+
+
+      <h4> Текущая игра: {{ this.gameService.currentGame()?.id }}</h4>
+      <h4> Статус: {{this.gameService.currentGame()?.status}}</h4>
+      <h4> Шаг: {{this.gameService.currentGame()?.currentStep}}</h4>
+      <h4> Ход: {{ this.currentPlayer() }}</h4>
+
+      @if(this.gameService.currentGame()?.result !== "None"){
+        <h4> Результат: {{this.gameService.currentGame()?.result}}</h4>
+      }
+    </div>
+  }
+
+  @if(boardSize() > 0){
+    <div class="board">
+      <div class="row" *ngFor="let row of [].constructor(boardSize()); let x = index; trackBy: trackByIndex">
+        <div class="cell"
+             *ngFor="let col of [].constructor(boardSize()); let y = index; trackBy: trackByIndex"
+             (click)="makeMove(x, y)" >
+          {{ getCellValue(x, y) }}
+        </div>
+      </div>
+    </div>
+  }
+
+
+  <div *ngIf="!this.gameService.currentGame()" class="loading">
+    Loading game...
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<header>
+
+  <h1 style="cursor: pointer;" [routerLink] = '["/"]' >{{ title }}</h1>
+
+  <nav>
+    <a [routerLink] = '["/new-game"]' >New Game</a>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

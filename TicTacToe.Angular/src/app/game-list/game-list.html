@@ -1,0 +1,29 @@
+<div class="game-list-container">
+  <h2>Available Games</h2>
+
+  @if (loading()) {
+    <div class="loading">Loading games...</div>
+  }
+
+  @if (!loading()) {
+    <div>
+      @if (games().length === 0) {
+        <div class="no-games">
+          No games available. Create a new one!
+        </div>
+      }
+
+      <div class="games-grid">
+        @for (game of games(); track game.id) {
+          <div class="game-card" [routerLink]="['/game', game.id]">
+            <div class="game-id">Game ID: {{ game.id | slice:0:8 }}...</div>
+            <div class="game-status">Status: {{ game.status }}</div>
+            <div class="game-created">Created: {{ game.createdAt | date:'short' }}</div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+
+</div>

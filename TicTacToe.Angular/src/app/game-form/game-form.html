@@ -1,0 +1,39 @@
+<div class="form-container">
+  <h2>Create New Game</h2>
+
+  <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="size">Board Size (3-10)</label>
+      <input id="size" type="number" formControlName="size" min="3" max="10">
+      <div *ngIf="gameForm.get('size')?.invalid && gameForm.get('size')?.touched" class="error">
+        Board size must be between 3 and 10
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="line_to_win">Line to Win (≥3)</label>
+      <input id="line_to_win" type="number" formControlName="line_to_win" min="3">
+      <div *ngIf="gameForm.get('line_to_win')?.invalid && gameForm.get('line_to_win')?.touched" class="error">
+        Must be at least 3
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="chance">Chance (0-100)</label>
+      <input id="chance" type="number" formControlName="chance" min="0" max="100">
+    </div>
+
+    <div class="form-group">
+      <label for="step">Step</label>
+      <input id="step" type="number" formControlName="step" min="0">
+    </div>
+
+    <div *ngIf="error()" class="form-error">
+      {{ error() }}
+    </div>
+
+    <button type="submit" [disabled]="gameForm.invalid || loading()">
+      {{ loading() ? 'Creating...' : 'Create Game' }}
+    </button>
+  </form>
+</div>
