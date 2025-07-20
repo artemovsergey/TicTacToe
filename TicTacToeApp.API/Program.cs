@@ -1,3 +1,4 @@
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using TicTacToeApp.API.Data;
@@ -8,6 +9,16 @@ using TicTacToeApp.API.Repositories;
 using JsonOptions = Microsoft.AspNetCore.Http.Json.JsonOptions;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<GameSettings>(builder.Configuration.GetSection("GameSettings"));
+//var gameSettings = builder.Configuration.GetSection("GameSettings").Get<GameSettings>();
+
+
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    options.SerializerOptions.WriteIndented = true;
+});
 
 builder.Services.AddCors();
 builder.Services.Configure<JsonOptions>(options =>
@@ -22,6 +33,14 @@ builder.Services.AddDbContext<TicTacToeContext>(o =>
     o.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
 
 var app = builder.Build();
+
+if (app.Environment.IsProduction())
+{
+    using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<TicTacToeContext>();
+    dbContext.Database.Migrate();
+}
+
 app.UseMiddleware<TicTacToeApp.API.Middleware.ExceptionHandlerMiddleware>();
 app.UseCors(o => o.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseSwagger();
@@ -41,3 +60,5 @@ app.MapGet("/health", () => Results.Ok("Проверка работы"))
 
 app.UseGameEndpoints();
 app.Run();
+
+public record GameSettings(int Id, string Name);

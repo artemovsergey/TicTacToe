@@ -1,12 +1,13 @@
-﻿networks:
+﻿version: '3.8'
+
+networks:
   network:
     driver: bridge
-    
+
 volumes:
   postgres_data:
 
 services:
-    
   api:
     container_name: TicTacToeAPI
     image: tictactoe.api
@@ -23,8 +24,9 @@ services:
     networks:
       - network
     depends_on:
-      - db
-      
+      db:
+        condition: service_healthy  # ⚠️ Ждём, пока БД не станет healthy
+
   db:
     image: postgres:latest
     container_name: TicTacToeAppPostgreSQL
@@ -32,6 +34,11 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
       POSTGRES_DB: TicTacToeAppDatabase
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     ports:
       - "5433:5432"
     volumes:
