@@ -5,7 +5,7 @@ import { Observable, tap } from 'rxjs';
 import { Game } from '../models/game';
 import { GameOption } from '../models/game-option';
 import { Move } from '../models/move';
-import { environment } from '../enviroments/enviroment';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'

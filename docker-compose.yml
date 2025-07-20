@@ -1,6 +1,4 @@
-﻿version: '3.8'
-
-networks:
+﻿networks:
   network:
     driver: bridge
 
@@ -8,19 +6,46 @@ volumes:
   postgres_data:
 
 services:
+  
+  nginx:
+    container_name: TicTacToeNginx
+    build:
+      context: .
+      dockerfile: loadbalancer/Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - network
+    depends_on:
+      - api
+  
+  angular:
+    container_name: TicTacToeAngular
+    restart: always
+    build:
+      context: .
+      dockerfile: TicTacToe.Angular/Dockerfile
+    ports:
+      - "4201:4200"
+    depends_on:
+      - api
+    networks:
+      - network
   api:
     container_name: TicTacToeAPI
     image: tictactoe.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ASPNETCORE_URLS=http://*:5000
+      - ASPNETCORE_URLS=http://*:8080
     env_file:
       - game.env
     build:
       context: .
       dockerfile: TicTacToeApp.API/Dockerfile
     ports:
-      - "8080:5000"
+      - "8080:8080"
     networks:
       - network
     depends_on:
@@ -45,3 +70,24 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - network
+    
+#  mssql:
+#    image: mcr.microsoft.com/mssql/server:2019-latest
+#    container_name: SampleAppMssql
+#    environment:
+#      SA_PASSWORD: "HlxTm2fcFE54JA1I_Yp5"
+#      ACCEPT_EULA: "Y"
+#    ports:
+#      - "1434:1433"
+#    volumes:
+#      - sql_data:/var/opt/mssql
+#    networks:
+#      - network
+#
+#  redis:
+#    image: "redis:latest"
+#    container_name: SampleAppRedis
+#    ports:
+#      - "6380:6379"
+#    networks:
+#      - network

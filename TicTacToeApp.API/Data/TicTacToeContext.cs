@@ -9,7 +9,7 @@ public class TicTacToeContext : DbContext
 {
     public TicTacToeContext(DbContextOptions<TicTacToeContext> opt) : base(opt)
     {
-        Database.Migrate();
+        // Database.Migrate();
     }
 
     public DbSet<Game> Games { get; set; }

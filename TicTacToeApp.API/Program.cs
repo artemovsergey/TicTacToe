@@ -38,6 +38,7 @@ if (app.Environment.IsProduction())
 {
     using var scope = app.Services.CreateScope();
     var dbContext = scope.ServiceProvider.GetRequiredService<TicTacToeContext>();
+    dbContext.Database.EnsureDeleted();
     dbContext.Database.Migrate();
 }
 
