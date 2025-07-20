@@ -1,4 +1,4 @@
 .idea
 priority.md
 scripts/build_and_push.sh
-notes.md
+scripts/test_and_coverage_report.sh
