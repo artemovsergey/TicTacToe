@@ -9,6 +9,8 @@ public static class SwaggerServices
         this IServiceCollection services
     )
     {
+        services.AddOpenApi();
+        
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc(
