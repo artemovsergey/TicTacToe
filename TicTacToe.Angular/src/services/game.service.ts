@@ -17,10 +17,6 @@ export class GameService {
 
   http = inject(HttpClient)
 
-  checkHealth(): Observable<void> {
-    return this.http.get<void>(`${this.apiUrl}/health`);
-  }
-
   getAllGames(): Observable<Game[]> {
     return this.http.get<Game[]>(`${this.apiUrl}/games`).pipe(
       tap(games => this.gamesList.set(games))

@@ -12,7 +12,7 @@ Accept: application/json
 
 ### Получить отдельную игру
 
-@gameId = b8aa36a5-9094-4dbd-80a5-444fcb92d3a4
+@gameId = b8aa36a5-9094-4dbd-80a5-444fcb92d3a4  
 
 GET {{api}}/games/{{gameId}}
 Accept: application/json

@@ -17,7 +17,7 @@ public static class SwaggerServices
                 "v1",
                 new OpenApiInfo
                 {
-                    Title = "Крестики-нолики",
+                    Title = "Крестики-нолики ",
                     Version = "v1",
                     Description = "API для пользователей",
                     Contact = new OpenApiContact

@@ -4,16 +4,17 @@ using TicTacToeApp.API.Endpoints;
 using TicTacToeApp.API.Extensions;
 using TicTacToeApp.API.Interfaces;
 using TicTacToeApp.API.Repositories;
+using TicTacToeApp.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSerializeServices();
-builder.Services.AddCors();
-builder.Services.AddSwaggerServices();
-
-builder.Services.AddScoped<IGameAsyncRepository, GameAsyncRepository>();
-builder.Services.AddDbContext<TicTacToeContext>(o =>
-    o.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
+builder.Services
+    .AddSerializeServices()
+    .AddCors()
+    .AddSwaggerServices()
+    .AddScoped<IGameAsyncRepository, GameAsyncRepository>()
+    .AddDbContext<TicTacToeContext>(o =>
+        o.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
 
 var app = builder.Build();
 
@@ -25,9 +26,9 @@ if (app.Environment.IsProduction())
     dbContext.Database.Migrate();
 }
 
-app.UseMiddleware<TicTacToeApp.API.Middleware.ExceptionHandlerMiddleware>();
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 app.UseCors(o => o.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseSwaggerMiddleware();
 app.UseGameEndpoints();
-app.Run();
 
+app.Run();
