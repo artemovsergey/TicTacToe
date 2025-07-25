@@ -26,7 +26,7 @@ export class NewGameFormComponent {
     step: [1, [Validators.min(0)]]
   });
 
-  onSubmit(): void {
+  onSubmit() {
     if (this.gameForm.invalid) return;
 
     this.loading.set(true);
